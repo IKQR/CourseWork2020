@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ilya\\Documents\\KPI\\OP\\Cource Work\\GameBlog.ua\\GameBlog.ua\\GameBlog.ua.csproj",
+      "projectUniqueName": "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog.ua\\GameBlog.ua\\GameBlog.ua.csproj",
       "projectName": "GameBlog.ua",
-      "projectPath": "C:\\Users\\Ilya\\Documents\\KPI\\OP\\Cource Work\\GameBlog.ua\\GameBlog.ua\\GameBlog.ua.csproj",
+      "projectPath": "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog.ua\\GameBlog.ua\\GameBlog.ua.csproj",
       "packagesPath": "C:\\Users\\Ilya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ilya\\Documents\\KPI\\OP\\Cource Work\\GameBlog.ua\\GameBlog.ua\\obj\\",
+      "outputPath": "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog.ua\\GameBlog.ua\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
