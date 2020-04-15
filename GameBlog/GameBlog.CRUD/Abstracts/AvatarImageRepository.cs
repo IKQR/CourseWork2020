@@ -1,12 +1,12 @@
 ﻿using GameBlog.CRUD.Repositories;
 using GameBlog.DAL.Entities;
-using Microsoft.EntityFrameworkCore;
+using GameBlog.Models;
 
 namespace GameBlog.CRUD.Abstracts
 {
     public class AvatarImageRepository : GenericRepository<AvatarImage>, IAvatarImageRepository
     {
-        public AvatarImageRepository(DbContext context) : base(context)
+        public AvatarImageRepository(Context context) : base(context)
         {
         }
     }

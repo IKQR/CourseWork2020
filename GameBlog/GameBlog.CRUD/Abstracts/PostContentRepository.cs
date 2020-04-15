@@ -1,12 +1,13 @@
 ﻿using GameBlog.CRUD.Repositories;
 using GameBlog.DAL.Entities;
+using GameBlog.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameBlog.CRUD.Abstracts
 {
     public class PostContentRepository : GenericRepository<PostContent>, IPostContentRepository
     {
-        public PostContentRepository(DbContext context) : base(context)
+        public PostContentRepository(Context context) : base(context)
         {
         }
     }

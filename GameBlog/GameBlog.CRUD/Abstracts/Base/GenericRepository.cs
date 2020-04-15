@@ -1,10 +1,10 @@
 ﻿using GameBlog.CRUD.Repositories;
+using GameBlog.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace GameBlog.CRUD.Abstracts
 {
@@ -13,7 +13,7 @@ namespace GameBlog.CRUD.Abstracts
         DbContext _context;
         DbSet<TEntity> _dbSet;
 
-        public GenericRepository(DbContext context)
+        public GenericRepository(Context context)
         {
             _context = context;
             _dbSet = context.Set<TEntity>();

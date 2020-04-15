@@ -56,3 +56,5 @@ C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WEB\obj\Debug\ne
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WEB\obj\Debug\netcoreapp3.1\GameBlog.WEB.dll
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WEB\obj\Debug\netcoreapp3.1\GameBlog.WEB.pdb
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WEB\obj\Debug\netcoreapp3.1\GameBlog.WEB.genruntimeconfig.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WEB\bin\Debug\netcoreapp3.1\GameBlog.CRUD.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WEB\bin\Debug\netcoreapp3.1\GameBlog.CRUD.pdb

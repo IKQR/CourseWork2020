@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GameBlog.DAL.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20200415202337_InitializeTables")]
+    [Migration("20200415220950_InitializeTables")]
     partial class InitializeTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -100,8 +100,8 @@ namespace GameBlog.DAL.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("Name")
-                        .HasColumnType("integer");
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
 
                     b.Property<int>("SteamId")
                         .HasColumnType("integer");
