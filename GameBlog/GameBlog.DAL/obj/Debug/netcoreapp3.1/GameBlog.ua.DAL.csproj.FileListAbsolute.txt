@@ -1,0 +1,8 @@
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog.ua\GameBlog.ua.Entities\bin\Debug\netcoreapp3.1\GameBlog.ua.DAL.deps.json
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog.ua\GameBlog.ua.Entities\bin\Debug\netcoreapp3.1\GameBlog.ua.DAL.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog.ua\GameBlog.ua.Entities\obj\Debug\netcoreapp3.1\GameBlog.ua.DAL.csprojAssemblyReference.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog.ua\GameBlog.ua.Entities\obj\Debug\netcoreapp3.1\GameBlog.ua.DAL.AssemblyInfoInputs.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog.ua\GameBlog.ua.Entities\obj\Debug\netcoreapp3.1\GameBlog.ua.DAL.AssemblyInfo.cs
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog.ua\GameBlog.ua.Entities\bin\Debug\netcoreapp3.1\GameBlog.ua.DAL.runtimeconfig.json
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog.ua\GameBlog.ua.Entities\bin\Debug\netcoreapp3.1\GameBlog.ua.DAL.runtimeconfig.dev.json
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog.ua\GameBlog.ua.Entities\obj\Debug\netcoreapp3.1\GameBlog.ua.DAL.genruntimeconfig.cache
