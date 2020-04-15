@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GameBlog.ua.Models.Enums
+namespace GameBlog.Models.Enums
 {
-    public enum AuthTypes
+    public enum AuthType
     {
         Default = 0,
         Google,

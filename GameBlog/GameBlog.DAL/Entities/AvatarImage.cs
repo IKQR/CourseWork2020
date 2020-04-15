@@ -1,6 +1,6 @@
-﻿using GameBlog.ua.Models.Enums;
+﻿using GameBlog.Models.Enums;
 
-namespace GameBlog.ua.DAL.Tables
+namespace GameBlog.DAL.Entities
 {
     public class AvatarImage
     {

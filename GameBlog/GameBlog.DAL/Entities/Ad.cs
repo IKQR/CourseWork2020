@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 
-namespace GameBlog.ua.DAL.Tables
+namespace GameBlog.DAL.Entities
 {
     public class Ad
     {

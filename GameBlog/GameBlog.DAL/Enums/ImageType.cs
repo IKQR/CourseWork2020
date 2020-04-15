@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GameBlog.ua.Models.Enums
+namespace GameBlog.Models.Enums
 {
     public enum ImageType
     {

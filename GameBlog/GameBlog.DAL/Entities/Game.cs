@@ -1,4 +1,4 @@
-﻿namespace GameBlog.ua.DAL.Tables
+﻿namespace GameBlog.DAL.Entities
 {
     public class Game
     {

@@ -1,13 +1,18 @@
 ﻿using System;
+using GameBlog.Models.Enums;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace GameBlog.DAL.Migrations
 {
-    public partial class Version1 : Migration
+    public partial class InitializeTables : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterDatabase()
+                .Annotation("Npgsql:Enum:AuthType", "Default,Google,Facebook")
+                .Annotation("Npgsql:Enum:ImageType", "PNG,JPEG,ICO");
+
             migrationBuilder.CreateTable(
                 name: "AvatarImages",
                 columns: table => new
@@ -15,7 +20,7 @@ namespace GameBlog.DAL.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Image = table.Column<byte[]>(nullable: true),
-                    Type = table.Column<int>(nullable: false)
+                    Type = table.Column<ImageType>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -96,7 +101,7 @@ namespace GameBlog.DAL.Migrations
                     Password = table.Column<string>(maxLength: 32, nullable: false),
                     Name = table.Column<string>(maxLength: 32, nullable: false),
                     Email = table.Column<string>(maxLength: 32, nullable: false),
-                    AuthType = table.Column<int>(nullable: false),
+                    AuthType = table.Column<AuthType>(nullable: false),
                     Posts = table.Column<int[]>(nullable: true),
                     LikedPosts = table.Column<int[]>(nullable: true),
                     RoleId = table.Column<int>(nullable: false),

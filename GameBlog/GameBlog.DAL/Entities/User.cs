@@ -1,9 +1,9 @@
-﻿using GameBlog.ua.Models.Enums;
+﻿using GameBlog.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 
-namespace GameBlog.ua.DAL.Tables
+namespace GameBlog.DAL.Entities
 {
     public class User
     {
@@ -18,7 +18,7 @@ namespace GameBlog.ua.DAL.Tables
         [MaxLength(32), Required]
         public string Email { get; set; }
         [Required]
-        public AuthTypes AuthType { get; set; }
+        public AuthType AuthType { get; set; }
         [AllowNull]
         public int[] Posts { get; set; }
         [AllowNull]

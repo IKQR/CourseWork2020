@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Mime;
 
-namespace GameBlog.ua.DAL.Tables
+namespace GameBlog.DAL.Entities
 {
     public class Post
     {

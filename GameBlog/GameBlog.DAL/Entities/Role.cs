@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GameBlog.ua.DAL.Tables
+namespace GameBlog.DAL.Entities
 {
     public class Role
     {

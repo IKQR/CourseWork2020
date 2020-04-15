@@ -1,0 +1,9 @@
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\bin\Debug\netcoreapp3.1\GameBlog.CRUD.deps.json
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\bin\Debug\netcoreapp3.1\GameBlog.CRUD.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\bin\Debug\netcoreapp3.1\GameBlog.CRUD.pdb
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\obj\Debug\netcoreapp3.1\GameBlog.CRUD.csprojAssemblyReference.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\obj\Debug\netcoreapp3.1\GameBlog.CRUD.csproj.CoreCompileInputs.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\obj\Debug\netcoreapp3.1\GameBlog.CRUD.AssemblyInfoInputs.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\obj\Debug\netcoreapp3.1\GameBlog.CRUD.AssemblyInfo.cs
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\obj\Debug\netcoreapp3.1\GameBlog.CRUD.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\obj\Debug\netcoreapp3.1\GameBlog.CRUD.pdb
