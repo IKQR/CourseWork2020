@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace GameBlog.DAL.Entities
 {
@@ -10,5 +11,6 @@ namespace GameBlog.DAL.Entities
         public string Name { get; set; }
         [MaxLength(128), Required]
         public string Description { get; set; }
+        public List<User> Users { get; set; }
     }
 }

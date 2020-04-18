@@ -5,7 +5,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace GameBlog.DAL.Migrations
 {
-    public partial class InitializeTables : Migration
+    public partial class RolesFixed : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -34,7 +34,8 @@ namespace GameBlog.DAL.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     SteamId = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: true),
+                    Permitted = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -78,7 +79,8 @@ namespace GameBlog.DAL.Migrations
                     ShortDescriprion = table.Column<string>(maxLength: 128, nullable: false),
                     Likes = table.Column<int>(nullable: false),
                     Views = table.Column<int>(nullable: false),
-                    PostContentId = table.Column<int>(nullable: false)
+                    PostContentId = table.Column<int>(nullable: false),
+                    Permitted = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -102,8 +104,8 @@ namespace GameBlog.DAL.Migrations
                     Name = table.Column<string>(maxLength: 32, nullable: false),
                     Email = table.Column<string>(maxLength: 32, nullable: false),
                     AuthType = table.Column<AuthType>(nullable: false),
-                    Posts = table.Column<int[]>(nullable: true),
-                    LikedPosts = table.Column<int[]>(nullable: true),
+                    PostsId = table.Column<int[]>(nullable: true),
+                    LikedPostsId = table.Column<int[]>(nullable: true),
                     RoleId = table.Column<int>(nullable: false),
                     AvatarImageId = table.Column<int>(nullable: false)
                 },
@@ -132,7 +134,8 @@ namespace GameBlog.DAL.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     GameId = table.Column<int>(nullable: false),
                     UserId = table.Column<int>(nullable: false),
-                    Message = table.Column<string>(maxLength: 128, nullable: true)
+                    Message = table.Column<string>(maxLength: 128, nullable: true),
+                    Permitted = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -177,6 +180,25 @@ namespace GameBlog.DAL.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "AvatarImages",
+                columns: new[] { "Id", "Image", "Type" },
+                values: new object[] { 1, new byte[] { 0 }, ImageType.PNG });
+
+            migrationBuilder.InsertData(
+                table: "Roles",
+                columns: new[] { "Id", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Just Moder", "moder" },
+                    { 2, "Regular User", "user" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "AuthType", "AvatarImageId", "Email", "LikedPostsId", "Login", "Name", "Password", "PostsId", "RoleId" },
+                values: new object[] { 1, AuthType.Default, 1, "kusik@jkl.j", null, "User", "Ilya", "User", null, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ads_GameId",

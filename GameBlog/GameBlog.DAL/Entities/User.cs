@@ -20,15 +20,13 @@ namespace GameBlog.DAL.Entities
         [Required]
         public AuthType AuthType { get; set; }
         [AllowNull]
-        public int[] Posts { get; set; }
+        public int[] PostsId { get; set; }
         [AllowNull]
-        public int[] LikedPosts { get; set; }
+        public int[] LikedPostsId { get; set; }
 
-        [ForeignKey("Role")]
         public int RoleId { get; set; }
         public Role Role { get; set; }
 
-        [ForeignKey("AvatarImage")]
         public int AvatarImageId { get; set; }
         public AvatarImage AvatarImage { get; set; }
     }

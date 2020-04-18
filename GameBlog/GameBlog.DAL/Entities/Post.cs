@@ -22,6 +22,8 @@ namespace GameBlog.DAL.Entities
         [ForeignKey("PostContent")]
         public int PostContentId { get; set; }
         public PostContent PostContent { get; set; }
-        
+
+        [DefaultValue(false)]
+        public bool Permitted { get; set; }
     }
 }

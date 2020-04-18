@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GameBlog.DAL.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20200415220950_InitializeTables")]
-    partial class InitializeTables
+    [Migration("20200418201142_RolesFixed")]
+    partial class RolesFixed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,6 +37,9 @@ namespace GameBlog.DAL.Migrations
                     b.Property<string>("Message")
                         .HasColumnType("character varying(128)")
                         .HasMaxLength(128);
+
+                    b.Property<bool>("Permitted")
+                        .HasColumnType("boolean");
 
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
@@ -66,6 +69,14 @@ namespace GameBlog.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AvatarImages");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Image = new byte[] { 0 },
+                            Type = ImageType.PNG
+                        });
                 });
 
             modelBuilder.Entity("GameBlog.DAL.Entities.Comment", b =>
@@ -103,6 +114,9 @@ namespace GameBlog.DAL.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
+                    b.Property<bool>("Permitted")
+                        .HasColumnType("boolean");
+
                     b.Property<int>("SteamId")
                         .HasColumnType("integer");
 
@@ -120,6 +134,9 @@ namespace GameBlog.DAL.Migrations
 
                     b.Property<int>("Likes")
                         .HasColumnType("integer");
+
+                    b.Property<bool>("Permitted")
+                        .HasColumnType("boolean");
 
                     b.Property<int>("PostContentId")
                         .HasColumnType("integer");
@@ -179,6 +196,20 @@ namespace GameBlog.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Just Moder",
+                            Name = "moder"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Regular User",
+                            Name = "user"
+                        });
                 });
 
             modelBuilder.Entity("GameBlog.DAL.Entities.User", b =>
@@ -199,7 +230,7 @@ namespace GameBlog.DAL.Migrations
                         .HasColumnType("character varying(32)")
                         .HasMaxLength(32);
 
-                    b.Property<int[]>("LikedPosts")
+                    b.Property<int[]>("LikedPostsId")
                         .HasColumnType("integer[]");
 
                     b.Property<string>("Login")
@@ -217,7 +248,7 @@ namespace GameBlog.DAL.Migrations
                         .HasColumnType("character varying(32)")
                         .HasMaxLength(32);
 
-                    b.Property<int[]>("Posts")
+                    b.Property<int[]>("PostsId")
                         .HasColumnType("integer[]");
 
                     b.Property<int>("RoleId")
@@ -230,6 +261,19 @@ namespace GameBlog.DAL.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AuthType = AuthType.Default,
+                            AvatarImageId = 1,
+                            Email = "kusik@jkl.j",
+                            Login = "User",
+                            Name = "Ilya",
+                            Password = "User",
+                            RoleId = 1
+                        });
                 });
 
             modelBuilder.Entity("GameBlog.DAL.Entities.Ad", b =>
@@ -280,7 +324,7 @@ namespace GameBlog.DAL.Migrations
                         .IsRequired();
 
                     b.HasOne("GameBlog.DAL.Entities.Role", "Role")
-                        .WithMany()
+                        .WithMany("Users")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
