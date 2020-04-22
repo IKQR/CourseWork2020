@@ -7,7 +7,7 @@ namespace GameBlog.CRUD.Abstracts
 {
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
-        public UserRepository(Context context) : base(context)
+        public UserRepository(GameBlogDbContext context) : base(context)
         {
         }
     }

@@ -7,7 +7,7 @@ namespace GameBlog.CRUD.Abstracts
 {
     public class AdRepository : GenericRepository<Ad>, IAdRepository
     {
-        public AdRepository(Context context) : base(context)
+        public AdRepository(GameBlogDbContext context) : base(context)
         {
         }
     }

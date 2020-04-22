@@ -13,7 +13,7 @@ namespace GameBlog.CRUD.Abstracts
         DbContext _context;
         DbSet<TEntity> _dbSet;
 
-        public GenericRepository(Context context)
+        public GenericRepository(GameBlogDbContext context)
         {
             _context = context;
             _dbSet = context.Set<TEntity>();

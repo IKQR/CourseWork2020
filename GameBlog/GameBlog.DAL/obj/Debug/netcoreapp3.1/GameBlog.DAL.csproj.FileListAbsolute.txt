@@ -4,9 +4,9 @@ C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\bin\Debug\ne
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\bin\Debug\netcoreapp3.1\GameBlog.DAL.dll
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\bin\Debug\netcoreapp3.1\GameBlog.DAL.pdb
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\obj\Debug\netcoreapp3.1\GameBlog.DAL.csprojAssemblyReference.cache
-C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\obj\Debug\netcoreapp3.1\GameBlog.DAL.csproj.CoreCompileInputs.cache
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\obj\Debug\netcoreapp3.1\GameBlog.DAL.AssemblyInfoInputs.cache
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\obj\Debug\netcoreapp3.1\GameBlog.DAL.AssemblyInfo.cs
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\obj\Debug\netcoreapp3.1\GameBlog.DAL.dll
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\obj\Debug\netcoreapp3.1\GameBlog.DAL.pdb
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\obj\Debug\netcoreapp3.1\GameBlog.DAL.genruntimeconfig.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\obj\Debug\netcoreapp3.1\GameBlog.DAL.csproj.CoreCompileInputs.cache

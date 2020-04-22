@@ -7,7 +7,7 @@ namespace GameBlog.CRUD.Abstracts
 {
     public class PostContentRepository : GenericRepository<PostContent>, IPostContentRepository
     {
-        public PostContentRepository(Context context) : base(context)
+        public PostContentRepository(GameBlogDbContext context) : base(context)
         {
         }
     }

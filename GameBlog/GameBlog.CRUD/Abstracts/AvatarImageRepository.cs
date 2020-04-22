@@ -6,7 +6,7 @@ namespace GameBlog.CRUD.Abstracts
 {
     public class AvatarImageRepository : GenericRepository<AvatarImage>, IAvatarImageRepository
     {
-        public AvatarImageRepository(Context context) : base(context)
+        public AvatarImageRepository(GameBlogDbContext context) : base(context)
         {
         }
     }
