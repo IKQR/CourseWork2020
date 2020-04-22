@@ -1,5 +1,5 @@
 ﻿using GameBlog.CRUD.Repositories;
-using GameBlog.Models;
+using GameBlog.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
@@ -16,6 +17,7 @@ namespace GameBlog.DAL.Entities
         [AllowNull]
         public int[] LikedPostsId { get; set; }
 
+        [DefaultValue(1)]
         public int AvatarImageId { get; set; }
         public AvatarImage AvatarImage { get; set; }
     }

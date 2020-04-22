@@ -15,7 +15,7 @@ namespace GameBlog.Initializer
         {
             var repo = new AvatarImageRepository(context);
             var idCounter = 0;
-            var images = new string[] { "Images/avatar.png" };
+            var images = new string[] { @"C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\avatar.png" };
 
             //try
             //{

@@ -17,9 +17,9 @@ namespace GameBlog.Initializer
             string userEmail = "User@gmail.com";
             string userPassword = "_Uu123456";
 
-            User admin = new User { Email = adminEmail, UserName = adminEmail };
-            User moderathor = new User { Email = moderathorEmail, UserName = moderathorEmail };
-            User user = new User { Email = userEmail, UserName = userEmail };
+            User admin = new User { Email = adminEmail, UserName = adminEmail, AvatarImageId = 1 };
+            User moderathor = new User { Email = moderathorEmail, UserName = moderathorEmail, AvatarImageId = 1 };
+            User user = new User { Email = userEmail, UserName = userEmail, AvatarImageId = 1 };
 
             if (await roleManager.FindByNameAsync("default") == null)
             {

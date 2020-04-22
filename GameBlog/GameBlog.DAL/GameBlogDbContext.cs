@@ -16,20 +16,12 @@ namespace GameBlog.DAL.Entities
                 "ImageType",
                 new Npgsql.NameTranslation.NpgsqlNullNameTranslator()
             );
-            //Database.EnsureDeleted();
-            Database.EnsureCreated();
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             
             builder.ForNpgsqlHasEnum(typeof(ImageType).Name, typeof(ImageType).GetEnumNames());
-
-            AvatarImage avatarImage = new AvatarImage { 
-                Id = 1, 
-                Image = System.IO.File.ReadAllBytes(@"C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\avatar.png"), 
-                Type = ImageType.PNG };
-            builder.Entity<AvatarImage>().HasData(new AvatarImage[] { avatarImage });
         }
 
         public DbSet<Ad> Ads { get; set; }
