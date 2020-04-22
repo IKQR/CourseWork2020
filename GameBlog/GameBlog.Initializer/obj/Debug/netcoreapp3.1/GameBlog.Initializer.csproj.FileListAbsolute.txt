@@ -1,0 +1,14 @@
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\obj\Debug\netcoreapp3.1\GameBlog.Initializer.csprojAssemblyReference.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\obj\Debug\netcoreapp3.1\GameBlog.Initializer.csproj.CoreCompileInputs.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\obj\Debug\netcoreapp3.1\GameBlog.Initializer.AssemblyInfoInputs.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\obj\Debug\netcoreapp3.1\GameBlog.Initializer.AssemblyInfo.cs
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\bin\Debug\netcoreapp3.1\GameBlog.Initializer.deps.json
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\bin\Debug\netcoreapp3.1\GameBlog.Initializer.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\bin\Debug\netcoreapp3.1\GameBlog.Initializer.pdb
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\bin\Debug\netcoreapp3.1\GameBlog.CRUD.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\bin\Debug\netcoreapp3.1\GameBlog.DAL.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\bin\Debug\netcoreapp3.1\GameBlog.CRUD.pdb
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\bin\Debug\netcoreapp3.1\GameBlog.DAL.pdb
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\obj\Debug\netcoreapp3.1\GameBlog.Initializer.csproj.CopyComplete
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\obj\Debug\netcoreapp3.1\GameBlog.Initializer.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\obj\Debug\netcoreapp3.1\GameBlog.Initializer.pdb
