@@ -43,6 +43,7 @@ namespace GameBlog.WebApp.Controllers
                 if (result.Succeeded)
                 {
                     // установка куки
+                    await _userManager.AddToRoleAsync(user, "default");
                     await _signInManager.SignInAsync(user, false);
                     return RedirectToAction("Index", "Home");
                 }

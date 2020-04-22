@@ -164,3 +164,7 @@ C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Index.cshtml.g.cs
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Roles\UserList.cshtml.g.cs
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\bin\Debug\netcoreapp3.1\GameBlog.CRUD.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\bin\Debug\netcoreapp3.1\GameBlog.Initializer.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\bin\Debug\netcoreapp3.1\GameBlog.Initializer.pdb
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\bin\Debug\netcoreapp3.1\GameBlog.CRUD.pdb

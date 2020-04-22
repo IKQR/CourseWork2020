@@ -9,3 +9,4 @@ C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\obj\Debug\n
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\bin\Debug\netcoreapp3.1\GameBlog.DAL.dll
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\bin\Debug\netcoreapp3.1\GameBlog.DAL.pdb
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\obj\Debug\netcoreapp3.1\GameBlog.CRUD.csproj.CopyComplete
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.CRUD\obj\Debug\netcoreapp3.1\GameBlog.CRUD.csproj.CoreCompileInputs.cache

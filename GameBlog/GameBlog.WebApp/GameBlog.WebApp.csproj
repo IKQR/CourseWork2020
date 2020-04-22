@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GameBlog.DAL\GameBlog.DAL.csproj" />
+    <ProjectReference Include="..\GameBlog.Initializer\GameBlog.Initializer.csproj" />
   </ItemGroup>
 
 </Project>
