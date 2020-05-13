@@ -1,11 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Authentication;
 
-namespace GameBlog.WebApp.ViewModels
+namespace GameBlog.Models.ViewModels
 {
 
     public class LoginViewModel
     {
         [Required]
+        [DataType(DataType.EmailAddress)]
+
+        [RegularExpression(RegexConstants.Email, ErrorMessage = "Invalid Email address")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
@@ -18,6 +23,7 @@ namespace GameBlog.WebApp.ViewModels
         public bool RememberMe { get; set; }
 
         public string ReturnUrl { get; set; }
+        public IList<AuthenticationScheme> ExternalLogins { get; set; }
     }
 
 }

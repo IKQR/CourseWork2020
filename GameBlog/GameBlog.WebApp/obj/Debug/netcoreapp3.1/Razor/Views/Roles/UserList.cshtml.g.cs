@@ -21,13 +21,13 @@ using GameBlog.WebApp;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\Views\_ViewImports.cshtml"
-using GameBlog.WebApp.Models;
+using GameBlog.Models.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"48f8fedaeb7e5ea79c2751edf1f642f4b2a4cdf7", @"/Views/Roles/UserList.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6925629fb168c29501105867e78945f5d4932549", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b188acc566f61f2a2a69b7da9f2f4e77705c1f4e", @"/Views/_ViewImports.cshtml")]
     public class Views_Roles_UserList : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<GameBlog.DAL.Entities.User>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-sm btn-primary"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

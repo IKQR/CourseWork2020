@@ -1,0 +1,12 @@
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Models\bin\Debug\netcoreapp3.1\GameBlog.Models.deps.json
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Models\bin\Debug\netcoreapp3.1\GameBlog.Models.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Models\bin\Debug\netcoreapp3.1\GameBlog.Models.pdb
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Models\bin\Debug\netcoreapp3.1\GameBlog.DAL.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Models\bin\Debug\netcoreapp3.1\GameBlog.DAL.pdb
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Models\obj\Debug\netcoreapp3.1\GameBlog.Models.csprojAssemblyReference.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Models\obj\Debug\netcoreapp3.1\GameBlog.Models.csproj.CoreCompileInputs.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Models\obj\Debug\netcoreapp3.1\GameBlog.Models.AssemblyInfoInputs.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Models\obj\Debug\netcoreapp3.1\GameBlog.Models.AssemblyInfo.cs
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Models\obj\Debug\netcoreapp3.1\GameBlog.Models.csproj.CopyComplete
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Models\obj\Debug\netcoreapp3.1\GameBlog.Models.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Models\obj\Debug\netcoreapp3.1\GameBlog.Models.pdb

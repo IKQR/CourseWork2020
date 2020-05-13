@@ -1,0 +1,20 @@
+.sticky-footer{
+	position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.footer-list{
+	list-style: none;
+}
+.footer-list li a{
+	color: #ffffff;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  
+}

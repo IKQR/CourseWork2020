@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GameBlog.DAL.Entities;
-using GameBlog.WebApp.ViewModels;
+using GameBlog.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,18 +40,7 @@ namespace GameBlog.WebApp.Controllers
             }
             return View(name);
         }
-
-        //[HttpPost]
-        //public async Task<IActionResult> Delete(string id)
-        //{
-        //    Role role = await _roleManager.FindByIdAsync(id);
-        //    if (role != null)
-        //    {
-        //        IdentityResult result = await _roleManager.DeleteAsync(role);
-        //    }
-        //    return RedirectToAction("Index");
-        //}
-
+        
         public IActionResult UserList() => View(_userManager.Users.ToList());
 
         public async Task<IActionResult> Edit(string userId)

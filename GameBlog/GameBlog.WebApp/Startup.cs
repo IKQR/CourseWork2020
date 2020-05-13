@@ -13,17 +13,28 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using GameBlog.Models;
 using GameBlog.DAL.Entities;
+using System.Reflection;
 
 namespace GameBlog.WebApp
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IWebHostEnvironment hostingEnvironment, IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            var appAssembly = Assembly.Load(new AssemblyName(hostingEnvironment.ApplicationName));
+            ConfigurationBuilder configBuilder = new ConfigurationBuilder();
+            configBuilder
+                .SetBasePath(hostingEnvironment.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddEnvironmentVariables()
+                .AddUserSecrets(appAssembly, optional: true);
+            IConfiguration configRoot = configBuilder.Build();
+            Configuration = configRoot;
+            Env = env;
         }
 
         public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Env { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -38,11 +49,37 @@ namespace GameBlog.WebApp
                 }
                 ));
 
-            services.AddIdentity<User,Role>(cfg => {
+            services.AddIdentity<User, Role>(cfg =>
+            {
                 cfg.User.RequireUniqueEmail = true;
             })
                 .AddEntityFrameworkStores<GameBlogDbContext>()
                 ;
+
+            services.AddAuthentication()
+                .AddFacebook(facebookOptions =>
+                    {
+                        IConfigurationSection facebookAuthNSection =
+                            Configuration.GetSection("Authentication:Facebook");
+
+                        facebookOptions.AppId = facebookAuthNSection["AppId"];
+                        facebookOptions.AppSecret = facebookAuthNSection["AppSecret"];
+                    })
+                .AddGoogle(googleOptions =>
+                    {
+                        IConfigurationSection googleAuthNSection =
+                            Configuration.GetSection("Authentication:Google");
+
+                        googleOptions.ClientId = googleAuthNSection["ClientId"];
+                        googleOptions.ClientSecret = googleAuthNSection["ClientSecret"];
+                    })
+                .AddSteam(steamOptions =>
+                {
+                    IConfigurationSection steamAuthNSection =
+                        Configuration.GetSection("Authentication:Google");
+
+                    steamOptions.ApplicationKey = steamAuthNSection["ApplicationKey"];
+                });
 
             services.AddScoped<RoleManager<Role>>();
 

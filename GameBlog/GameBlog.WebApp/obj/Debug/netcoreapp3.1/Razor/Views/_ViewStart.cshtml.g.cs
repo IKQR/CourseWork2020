@@ -21,13 +21,13 @@ using GameBlog.WebApp;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\Views\_ViewImports.cshtml"
-using GameBlog.WebApp.Models;
+using GameBlog.Models.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6925629fb168c29501105867e78945f5d4932549", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b188acc566f61f2a2a69b7da9f2f4e77705c1f4e", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

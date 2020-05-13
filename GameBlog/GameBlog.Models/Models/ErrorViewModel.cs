@@ -1,6 +1,4 @@
-using System;
-
-namespace GameBlog.WebApp.Models
+namespace GameBlog.Models.Models
 {
     public class ErrorViewModel
     {

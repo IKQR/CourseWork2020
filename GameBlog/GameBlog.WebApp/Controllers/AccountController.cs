@@ -1,6 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using AngleSharp.Dom;
 using GameBlog.DAL.Entities;
-using GameBlog.WebApp.ViewModels;
+using GameBlog.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,11 +34,12 @@ namespace GameBlog.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                
-                User user = new User { 
-                    Email = model.Email, 
-                    UserName = model.Email, 
-                    AvatarImageId =  1,
+
+                User user = new User
+                {
+                    Email = model.Email,
+                    UserName = model.Email,
+                    AvatarImageId = 1,
                     PostsId = null,
                     LikedPostsId = null,
                 };
@@ -59,17 +64,23 @@ namespace GameBlog.WebApp.Controllers
         }
         #endregion
 
-        #region Login
+        #region Login/Logout
         [HttpGet]
-        public IActionResult Login(string returnUrl = null)
+        public async Task<IActionResult> Login(string returnUrl)
         {
-            return View(new LoginViewModel { ReturnUrl = returnUrl });
+            LoginViewModel model = new LoginViewModel
+            {
+                ReturnUrl = returnUrl,
+                ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList()
+            };
+            return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+            model.ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
                 var result =
@@ -103,5 +114,76 @@ namespace GameBlog.WebApp.Controllers
             return RedirectToAction("Index", "Home");
         }
         #endregion
+
+        [HttpPost]
+        public IActionResult ExternalLogin(string provider, string returnUrl)
+        {
+            var redirectUrl = Url.Action("ExternalLoginCallback",
+                "Account", new { ReturnUrl = returnUrl });
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
+            return new ChallengeResult(provider, properties);
+        }
+
+        public async Task<IActionResult> ExternalLoginCallback(string returnUrl = null, string remoteError = null)
+        {
+            returnUrl ??= Url.Content("~/");
+
+            LoginViewModel model = new LoginViewModel()
+            {
+                ReturnUrl = returnUrl,
+                ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList()
+            };
+            if (remoteError != null)
+            {
+                ModelState.AddModelError(String.Empty, $"Error for external login: {remoteError}");
+                return View("Login", model);
+            }
+
+            ExternalLoginInfo info = await _signInManager.GetExternalLoginInfoAsync();
+            if (info == null)
+            {
+                ModelState.AddModelError(String.Empty, "Error to Login info");
+                return View("Login", model);
+            }
+
+            var signInResult = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider,
+                info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
+            if (signInResult.Succeeded)
+            {
+                return LocalRedirect(returnUrl);
+            }
+            else
+            {
+                var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+                if (email != null)
+                {
+                    User user = await _userManager.FindByEmailAsync(email);
+                    if (user == null)
+                    {
+                        user = new User
+                        {
+                            UserName = email,
+                            Email = email,
+                            AvatarImageId = 1
+                        };
+                        IdentityResult result = await _userManager.CreateAsync(user);
+                        if (result.Succeeded)
+                        {
+                            await _userManager.AddToRoleAsync(user, "default");
+                        }
+                    }
+
+                    await _userManager.AddLoginAsync(user, info);
+                    await _signInManager.SignInAsync(user, false);
+                    return LocalRedirect(returnUrl);
+
+                }
+            }
+            //var Email = info.Principal.FindFirst(ClaimTypes.Email);
+            //var Login = info.Principal.FindFirst(ClaimTypes.);
+            //var Id = info.Principal.FindFirst(ClaimTypes.Email);
+            //var Name = info.Principal.FindFirst(ClaimTypes.Email);
+            return View("Login", model);
+        }
     }
 }
