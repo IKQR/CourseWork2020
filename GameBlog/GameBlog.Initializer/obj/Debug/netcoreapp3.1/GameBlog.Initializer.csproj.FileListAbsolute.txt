@@ -12,3 +12,5 @@ C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\bin\
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\obj\Debug\netcoreapp3.1\GameBlog.Initializer.csproj.CopyComplete
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\obj\Debug\netcoreapp3.1\GameBlog.Initializer.dll
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\obj\Debug\netcoreapp3.1\GameBlog.Initializer.pdb
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\bin\Debug\netcoreapp3.1\SteamGamesAPI.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.Initializer\bin\Debug\netcoreapp3.1\SteamGamesAPI.pdb

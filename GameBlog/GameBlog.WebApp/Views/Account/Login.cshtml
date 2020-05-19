@@ -1,54 +1,60 @@
 ﻿@using Microsoft.AspNetCore.Authentication
 @model GameBlog.Models.ViewModels.LoginViewModel
 
-<h2>Вход в приложение</h2>
-<div class="row">
-    <div class="col-md-6">
-        <form method="post" asp-controller="Account" asp-action="Login"
-              asp-route-returnUrl="@Model.ReturnUrl">
-            <div asp-validation-summary="ModelOnly"></div>
-            <div>
-                <label asp-for="Email"></label><br />
-                <input asp-for="Email" />
-                <span asp-validation-for="Email"></span>
-            </div>
-            <div>
-                <label asp-for="Password"></label><br />
-                <input asp-for="Password" />
-                <span asp-validation-for="Password"></span>
-            </div>
-            <div>
-                <label asp-for="RememberMe"></label><br />
-                <input asp-for="RememberMe" />
-            </div>
-            <div>
-                <input type="submit" value="Войти" />
-            </div>
-        </form>
-    </div>
-    <div class="col-md-6">
-    @{
-        if (Model.ExternalLogins.Count == 0)
-        {
-            <strong> External logins is empty</strong>
-        }
-        else
-        {
-            <form method="post" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl">
-                <div>
-                    @{
-                        foreach (AuthenticationScheme provider in Model.ExternalLogins)
-                        {
-                            <button type="submit" class="btn btn-primary"
-                                    name="provider" value="@provider.Name"
-                                    title="Login using your @provider.DisplayName account">
-                                @provider.DisplayName
-                            </button>
-                        }
-                    }
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm">
+            <h2>Basic Login</h2>
+            <hr>
+            <form method="post" asp-controller="Account" asp-action="Login"
+                  asp-route-returnUrl="@Model.ReturnUrl">
+                <div class="form-group">
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <span asp-validation-for="Email"></span>
                 </div>
+                <div class="form-group">
+                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input asp-for="RememberMe" type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label asp-for="RememberMe" class="form-check-label" for="exampleCheck1">Remember Me</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-        }
-    }
+        </div>
+        <div class="col-sm">
+            <h2>Use external services</h2>
+            <hr>
+            @{
+                if (Model.ExternalLogins.Count == 0)
+                {
+                    <strong> External logins are unavailable now </strong>
+                }
+                else
+                {
+                    <form method="post" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl">
+                        <div class="btn-group-justified btn-group-lg">
+                            @{
+                                foreach (AuthenticationScheme provider in Model.ExternalLogins)
+                                {
+                                    <button type="submit" class="btn btn-primary btn-block"
+                                            name="provider" value="@provider.Name"
+                                            title="Login using your @provider.DisplayName account">
+                                        @provider.DisplayName
+                                    </button>
+                                }
+                            }
+                        </div>
+                    </form>
+                }
+            }
+        </div>
     </div>
 </div>

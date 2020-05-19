@@ -3080,7 +3080,8 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "GameBlog.CRUD": "1.0.0",
-          "GameBlog.DAL": "1.0.0"
+          "GameBlog.DAL": "1.0.0",
+          "SteamGamesAPI": "1.0.0"
         },
         "compile": {
           "bin/placeholder/GameBlog.Initializer.dll": {}
@@ -3100,6 +3101,19 @@
         },
         "runtime": {
           "bin/placeholder/GameBlog.Models.dll": {}
+        }
+      },
+      "SteamGamesAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "compile": {
+          "bin/placeholder/SteamGamesAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SteamGamesAPI.dll": {}
         }
       }
     }
@@ -9512,6 +9526,11 @@
       "type": "project",
       "path": "../GameBlog.Models/GameBlog.Models.csproj",
       "msbuildProject": "../GameBlog.Models/GameBlog.Models.csproj"
+    },
+    "SteamGamesAPI/1.0.0": {
+      "type": "project",
+      "path": "../SteamGamesAPI/SteamGamesAPI.csproj",
+      "msbuildProject": "../SteamGamesAPI/SteamGamesAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {

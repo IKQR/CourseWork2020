@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GameBlog.WebApp.Controllers
 {
-    [Route("api/image")]
+    [Route("image")]
     [ApiController]
     public class ImageController : ControllerBase
     {

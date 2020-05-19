@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AngleSharp.Dom;
 using GameBlog.DAL.Entities;
 using GameBlog.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,13 +26,22 @@ namespace GameBlog.WebApp.Controllers
 
         #region Register
         [HttpGet]
-        public IActionResult Register()
+        public async Task<IActionResult> Register(string returnUrl)
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+                return RedirectToAction("Logout");
+            RegisterViewModel model = new RegisterViewModel
+            {
+                ReturnUrl = returnUrl,
+                ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList()
+            };
+            return View(model);
         }
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
+            if (User.Identity.IsAuthenticated)
+                return RedirectToAction("Logout");
             if (ModelState.IsValid)
             {
 
@@ -68,6 +78,8 @@ namespace GameBlog.WebApp.Controllers
         [HttpGet]
         public async Task<IActionResult> Login(string returnUrl)
         {
+            if (User.Identity.IsAuthenticated)
+                return RedirectToAction("Logout");
             LoginViewModel model = new LoginViewModel
             {
                 ReturnUrl = returnUrl,
@@ -80,6 +92,8 @@ namespace GameBlog.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+            if (User.Identity.IsAuthenticated)
+                return RedirectToAction("Logout");
             model.ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
@@ -99,13 +113,13 @@ namespace GameBlog.WebApp.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Неправильный логин и (или) пароль");
+                    ModelState.AddModelError("", "Wrong login or password");
                 }
             }
             return View(model);
         }
 
-        [HttpPost]
+        [HttpPost, Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {

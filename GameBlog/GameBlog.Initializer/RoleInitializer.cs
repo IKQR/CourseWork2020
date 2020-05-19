@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace GameBlog.Initializer
 {
-    public class RoleInitializer
+    public static class RoleInitializer
     {
         public static async Task InitializeAsync(UserManager<User> userManager, RoleManager<Role> roleManager)
         {

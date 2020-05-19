@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QA0wEc1HzmcMOqFCQPTWC8hlbIa3nVS6jUWORD/QLLF1xK1ZeFMJfNOZRmrGIwPfZHXG3LdQzfeuRA6GFZ0XPg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog\\SteamGamesAPI\\SteamGamesAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ilya\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

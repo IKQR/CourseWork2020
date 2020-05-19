@@ -2546,7 +2546,8 @@
       "GameBlog.Initializer/1.0.0": {
         "dependencies": {
           "GameBlog.CRUD": "1.0.0",
-          "GameBlog.DAL": "1.0.0"
+          "GameBlog.DAL": "1.0.0",
+          "SteamGamesAPI": "1.0.0"
         },
         "runtime": {
           "GameBlog.Initializer.dll": {}
@@ -2564,6 +2565,17 @@
         },
         "compile": {
           "GameBlog.Models.dll": {}
+        }
+      },
+      "SteamGamesAPI/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "SteamGamesAPI.dll": {}
+        },
+        "compile": {
+          "SteamGamesAPI.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -5525,6 +5537,11 @@
       "sha512": ""
     },
     "GameBlog.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SteamGamesAPI/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

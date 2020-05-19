@@ -1,23 +1,61 @@
-﻿@model GameBlog.Models.ViewModels.RegisterViewModel
-<h2>Регистрация нового пользователя</h2>
-<form method="post" asp-controller="Account" asp-action="Register">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
+﻿@using Microsoft.AspNetCore.Authentication
+@model GameBlog.Models.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm">
+            <h2>Register</h2>
+            <hr>
+            <form method="post" asp-controller="Account" asp-action="Register">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PasswordConfirm">Confirm Password</label>
+                    <input asp-for="PasswordConfirm" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <span asp-validation-for="PasswordConfirm"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-sm">
+            <h2>Use external services</h2>
+            <hr>
+            @{
+                if (Model.ExternalLogins.Count == 0)
+                {
+                    <strong> External logins are unavailable now </strong>
+                }
+                else
+                {
+                    <form method="post" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl">
+                        <div class="btn-group-justified btn-group-lg">
+                            @{
+                                foreach (AuthenticationScheme provider in Model.ExternalLogins)
+                                {
+                                    <button type="submit" class="btn btn-primary btn-block"
+                                            name="provider" value="@provider.Name"
+                                            title="Login using your @provider.DisplayName account">
+                                        @provider.DisplayName
+                                    </button>
+                                }
+                            }
+                        </div>
+                    </form>
+                }
+            }
+        </div>
     </div>
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <div>
-        <label asp-for="PasswordConfirm"></label><br />
-        <input asp-for="PasswordConfirm" />
-        <span asp-validation-for="PasswordConfirm"></span>
-    </div>
-    <div>
-        <input type="submit" value="Регистрация" />
-    </div>
-</form>
+</div>

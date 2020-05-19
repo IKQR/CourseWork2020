@@ -5,6 +5,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
+using GameBlog.CRUD.Abstracts;
 
 namespace GameBlog.Initializer
 {
@@ -19,9 +20,12 @@ namespace GameBlog.Initializer
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
-            await ImageInitializer.InitializeAsync(context);
+            await ImageInitializer.InitializeAsync(new AvatarImageRepository(context));
+            
+            await GamesInitializer.InitializeAsync(new GameRepository(context));
 
             await RoleInitializer.InitializeAsync(userManager, rolesManager);
+
 
         }
     }

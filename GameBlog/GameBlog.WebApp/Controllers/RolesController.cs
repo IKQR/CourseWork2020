@@ -3,11 +3,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using GameBlog.DAL.Entities;
 using GameBlog.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameBlog.WebApp.Controllers
 {
+    [Authorize(Roles="admin")]
     public class RolesController : Controller
     {
         RoleManager<Role> _roleManager;

@@ -21,10 +21,9 @@ namespace GameBlog.WebApp.Controllers
         {
             return View();
         }
-
-        public string Privacy()
+        public IActionResult About()
         {
-            return "";
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

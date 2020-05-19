@@ -1,0 +1,9 @@
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\SteamGamesAPI\bin\Debug\netcoreapp3.1\SteamGamesAPI.deps.json
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\SteamGamesAPI\bin\Debug\netcoreapp3.1\SteamGamesAPI.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\SteamGamesAPI\obj\Debug\netcoreapp3.1\SteamGamesAPI.AssemblyInfoInputs.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\SteamGamesAPI\obj\Debug\netcoreapp3.1\SteamGamesAPI.AssemblyInfo.cs
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\SteamGamesAPI\bin\Debug\netcoreapp3.1\SteamGamesAPI.pdb
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\SteamGamesAPI\obj\Debug\netcoreapp3.1\SteamGamesAPI.csproj.CoreCompileInputs.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\SteamGamesAPI\obj\Debug\netcoreapp3.1\SteamGamesAPI.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\SteamGamesAPI\obj\Debug\netcoreapp3.1\SteamGamesAPI.pdb
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\SteamGamesAPI\obj\Debug\netcoreapp3.1\SteamGamesAPI.csprojAssemblyReference.cache

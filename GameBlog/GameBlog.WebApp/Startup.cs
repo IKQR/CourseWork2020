@@ -58,28 +58,28 @@ namespace GameBlog.WebApp
 
             services.AddAuthentication()
                 .AddFacebook(facebookOptions =>
-                    {
-                        IConfigurationSection facebookAuthNSection =
-                            Configuration.GetSection("Authentication:Facebook");
-
-                        facebookOptions.AppId = facebookAuthNSection["AppId"];
-                        facebookOptions.AppSecret = facebookAuthNSection["AppSecret"];
-                    })
-                .AddGoogle(googleOptions =>
-                    {
-                        IConfigurationSection googleAuthNSection =
-                            Configuration.GetSection("Authentication:Google");
-
-                        googleOptions.ClientId = googleAuthNSection["ClientId"];
-                        googleOptions.ClientSecret = googleAuthNSection["ClientSecret"];
-                    })
-                .AddSteam(steamOptions =>
                 {
-                    IConfigurationSection steamAuthNSection =
+                    IConfigurationSection facebookAuthNSection =
+                        Configuration.GetSection("Authentication:Facebook");
+
+                    facebookOptions.AppId = facebookAuthNSection["AppId"];
+                    facebookOptions.AppSecret = facebookAuthNSection["AppSecret"];
+                })
+                .AddGoogle(googleOptions =>
+                {
+                    IConfigurationSection googleAuthNSection =
                         Configuration.GetSection("Authentication:Google");
 
-                    steamOptions.ApplicationKey = steamAuthNSection["ApplicationKey"];
+                    googleOptions.ClientId = googleAuthNSection["ClientId"];
+                    googleOptions.ClientSecret = googleAuthNSection["ClientSecret"];
                 });
+                //.AddSteam(steamOptions =>
+                //{
+                //    IConfigurationSection steamAuthNSection =
+                //        Configuration.GetSection("Authentication:Google");
+
+                //    steamOptions.ApplicationKey = steamAuthNSection["ApplicationKey"];
+                //});
 
             services.AddScoped<RoleManager<Role>>();
 

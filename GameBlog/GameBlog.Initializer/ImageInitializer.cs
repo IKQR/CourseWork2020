@@ -11,20 +11,10 @@ namespace GameBlog.Initializer
 {
     public class ImageInitializer
     {
-        public static async Task InitializeAsync(GameBlogDbContext context)
+        public static async Task InitializeAsync(AvatarImageRepository repo)
         {
-            var repo = new AvatarImageRepository(context);
             var idCounter = 0;
             var images = new string[] { @"C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.DAL\avatar.png" };
-
-            //try
-            //{
-            //    images = Directory.GetFiles("Images");
-            //}
-            //catch(Exception ex)
-            //{
-                
-            //}
 
             foreach (var img in images)
             {

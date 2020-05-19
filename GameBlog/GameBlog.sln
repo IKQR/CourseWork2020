@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameBlog.WebApp", "GameBlog
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameBlog.Initializer", "GameBlog.Initializer\GameBlog.Initializer.csproj", "{DF4161CF-87A1-44E5-9EE0-3E5DEA3FF4A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBlog.Models", "GameBlog.Models\GameBlog.Models.csproj", "{C14BF68B-CB65-473F-B66D-D5A58EB5D8EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameBlog.Models", "GameBlog.Models\GameBlog.Models.csproj", "{C14BF68B-CB65-473F-B66D-D5A58EB5D8EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamGamesAPI", "SteamGamesAPI\SteamGamesAPI.csproj", "{7B8CB2AE-7975-445F-87DE-37260C0E3512}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{C14BF68B-CB65-473F-B66D-D5A58EB5D8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C14BF68B-CB65-473F-B66D-D5A58EB5D8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C14BF68B-CB65-473F-B66D-D5A58EB5D8EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B8CB2AE-7975-445F-87DE-37260C0E3512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B8CB2AE-7975-445F-87DE-37260C0E3512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B8CB2AE-7975-445F-87DE-37260C0E3512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B8CB2AE-7975-445F-87DE-37260C0E3512}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
