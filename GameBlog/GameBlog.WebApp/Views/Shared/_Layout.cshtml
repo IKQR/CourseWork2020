@@ -8,79 +8,82 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand mar" asp-controller="Home" asp-action="Index"><img src="~/images/logo2.png"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto ">
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Index">
-                            Main
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="About">
-                            About
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Index">
-                            Blogs
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Index">
-                            Find teammates
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Game" asp-action="Index">
-                            Game list
-                        </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <div class="btn-group">
-                            @{
-                                if (User.Identity.IsAuthenticated)
-                                {
-                                    <form method="post" asp-controller="Account" asp-action="Logout">
-                                        <input class="btn btn-light" type="submit" value="Logout" />
-                                    </form>
-                                    <a class="btn btn-light" asp-controller="User" asp-action="Index">Your account</a>
-                                }
-                                else
-                                {
-                                    <a class="btn btn-light" asp-controller="Account" asp-action="Login">LogIn</a>
-                                    <a class="btn btn-light" asp-controller="Account" asp-action="Register">Register</a>
-                                }
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand mar" asp-controller="Home" asp-action="Index"><img src="~/images/logo2.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">
+                        Main
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="About">
+                        About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Blog" asp-action="Index">
+                        Blogs
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">
+                        Find teammates
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Game" asp-action="Index">
+                        Game list
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="btn-group">
+                        @{
+                            if (User.Identity.IsAuthenticated)
+                            {
+                                <form method="post" asp-controller="Account" asp-action="Logout">
+                                    <input class="btn btn-light" type="submit" value="Logout" />
+                                </form>
+                                <a class="btn btn-light" asp-controller="User" asp-action="Index">Your account</a>
                             }
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+                            else
+                            {
+                                <a class="btn btn-light" asp-controller="Account" asp-action="Login">LogIn</a>
+                                <a class="btn btn-light" asp-controller="Account" asp-action="Register">Register</a>
+                            }
+                        }
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
-    <div class="container-fluid">
-        @RenderBody()
-    </div>
+    <main role="main" class="container">
+        <div class="container-fluid mb-4 mt-4">
+            @RenderBody()
+        </div>
+    </main>
 
-    <footer class="pt-4 my-md-4 border-top footer">
-        <div class="container-fluid">
+    <footer class="footer">
+        <div class="container-fluid" style="background: #e3e3e3">
             <div class="row">
-                <div class="col-md"></div>
-                <div class="col-md"></div>
-                <div class="col-md text-right">
+                <div class="col-sm"></div>
+                <div class="col-sm"></div>
+                <div class="col-sm text-right">
                     <span class="text-muted">GameBlog &copy; 2020-2021</span>
                 </div>
             </div>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

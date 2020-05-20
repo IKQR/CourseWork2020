@@ -25,5 +25,9 @@ namespace GameBlog.DAL.Entities
 
         [DefaultValue(false)]
         public bool Permitted { get; set; }
+
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+        public User User { get; set; }
     }
 }

@@ -1,6 +1,20 @@
-﻿
+﻿@model GameBlog.Models.Models.Pagination.GenericPaginatedModel<GameBlog.Models.ViewModels.GameViewModel>
+
 @{
     ViewData["Title"] = "Games";
 }
+<div class="container">
+    <h1> Games </h1>
 
-<h1> Games </h1>
+    <ul class="list-group">
+        @foreach (var mod in Model.Models)
+        {
+            <li class="list-group-item">
+                @mod.Name
+            </li>
+        }
+    </ul>
+    <br/>
+
+    @{await Html.RenderPartialAsync("Pagination", Model.Pagination);}
+</div>

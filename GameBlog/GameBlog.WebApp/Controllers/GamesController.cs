@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using GameBlog.CRUD.Abstracts;
 using GameBlog.DAL.Entities;
+using GameBlog.Models.Models.Pagination;
+using GameBlog.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameBlog.WebApp.Controllers
@@ -16,9 +18,17 @@ namespace GameBlog.WebApp.Controllers
         {
             _gameRepository = new GameRepository(context);
         }
-        public IActionResult Index()
+        [HttpGet, Route("/games")]
+        public async Task<IActionResult> Index(int? page)
         {
-            return View();
+            int height = 15;
+            List<GameViewModel> models = await _gameRepository.GetGameViewModels();
+            GenericPaginatedModel<GameViewModel> paginatedModel = new GenericPaginatedModel<GameViewModel>()
+            {
+                Models = models.Skip(((page??1)-1)*height).Take(height),
+                Pagination = new PaginationModel(models.Count, page ?? 1, height, "Index")
+            };
+            return View(paginatedModel);
         }
     }
 }

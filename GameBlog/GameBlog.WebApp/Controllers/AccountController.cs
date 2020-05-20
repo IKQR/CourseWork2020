@@ -17,7 +17,9 @@ namespace GameBlog.WebApp.Controllers
         private readonly SignInManager<User> _signInManager;
         private readonly RoleManager<Role> _roleManager;
 
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<Role> roleManager)
+        public AccountController(UserManager<User> userManager, 
+            SignInManager<User> signInManager, 
+            RoleManager<Role> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -48,16 +50,14 @@ namespace GameBlog.WebApp.Controllers
                 User user = new User
                 {
                     Email = model.Email,
-                    UserName = model.Email,
+                    UserName = model.Name,
                     AvatarImageId = 1,
-                    PostsId = null,
-                    LikedPostsId = null,
+                    PostsId = new int[]{},
+                    LikedPostsId = new int[]{},
                 };
-                // добавляем пользователя
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    // установка куки
                     await _userManager.AddToRoleAsync(user, "default");
                     await _signInManager.SignInAsync(user, false);
                     return RedirectToAction("Index", "Home");
@@ -70,6 +70,8 @@ namespace GameBlog.WebApp.Controllers
                     }
                 }
             }
+
+            model.ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             return View(model);
         }
         #endregion
@@ -178,6 +180,8 @@ namespace GameBlog.WebApp.Controllers
                         {
                             UserName = email,
                             Email = email,
+                            PostsId = new int[]{},
+                            LikedPostsId = new int[]{},
                             AvatarImageId = 1
                         };
                         IdentityResult result = await _userManager.CreateAsync(user);

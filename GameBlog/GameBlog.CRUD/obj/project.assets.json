@@ -750,6 +750,19 @@
         "runtime": {
           "bin/placeholder/GameBlog.DAL.dll": {}
         }
+      },
+      "GameBlog.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "GameBlog.DAL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GameBlog.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GameBlog.Models.dll": {}
+        }
       }
     }
   },
@@ -1897,11 +1910,17 @@
       "type": "project",
       "path": "../GameBlog.DAL/GameBlog.DAL.csproj",
       "msbuildProject": "../GameBlog.DAL/GameBlog.DAL.csproj"
+    },
+    "GameBlog.Models/1.0.0": {
+      "type": "project",
+      "path": "../GameBlog.Models/GameBlog.Models.csproj",
+      "msbuildProject": "../GameBlog.Models/GameBlog.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "GameBlog.DAL >= 1.0.0",
+      "GameBlog.Models >= 1.0.0",
       "Microsoft.AspNetCore.Identity >= 2.2.0"
     ]
   },
@@ -1937,6 +1956,9 @@
           "projectReferences": {
             "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog\\GameBlog.DAL\\GameBlog.DAL.csproj": {
               "projectPath": "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog\\GameBlog.DAL\\GameBlog.DAL.csproj"
+            },
+            "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog\\GameBlog.Models\\GameBlog.Models.csproj": {
+              "projectPath": "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog\\GameBlog.Models\\GameBlog.Models.csproj"
             }
           }
         }

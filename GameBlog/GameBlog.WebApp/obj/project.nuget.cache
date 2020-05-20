@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WcBgilHI3gME6QJ4Q+4Jmp27l11UaApTvqW2kdeWfUcnBxoJXSKHqg0LyxSeBjWh/vJZpsYgdj9wZLgTXlws1A==",
+  "dgSpecHash": "tgzKs+1dSdag7AG+zpRWV0qrG0YoEHN4wgv2b1Y+AsNYbG1QEwGFTv13xk9lteWi594XqORdBC7zMSvNU1x1fg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog\\GameBlog.WebApp\\GameBlog.WebApp.csproj",
   "expectedPackageFiles": [
@@ -196,7 +196,8 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Ilya\\.nuget\\packages\\tinymce\\5.2.2\\tinymce.5.2.2.nupkg.sha512"
   ],
   "logs": []
 }

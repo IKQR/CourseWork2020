@@ -1,6 +1,9 @@
-﻿using GameBlog.CRUD.Repositories;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using GameBlog.CRUD.Repositories;
 using GameBlog.DAL.Entities;
-using GameBlog.Models;
+using System.Linq;
+using GameBlog.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameBlog.CRUD.Abstracts
@@ -9,6 +12,18 @@ namespace GameBlog.CRUD.Abstracts
     {
         public GameRepository(GameBlogDbContext context) : base(context)
         {
+        }
+
+        public async Task<List<GameViewModel>> GetGameViewModels()
+        {
+            IQueryable<GameViewModel> models = 
+                (from g in _dbSet
+                where g.Permitted == true
+                select new GameViewModel()
+                {
+                    Name = g.Name
+                });
+            return await models.ToListAsync();
         }
     }
 }

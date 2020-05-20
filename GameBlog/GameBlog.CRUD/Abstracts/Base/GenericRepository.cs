@@ -5,13 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace GameBlog.CRUD.Abstracts
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        DbContext _context;
-        DbSet<TEntity> _dbSet;
+        protected DbContext _context;
+        protected DbSet<TEntity> _dbSet;
 
         public GenericRepository(GameBlogDbContext context)
         {
@@ -33,10 +34,11 @@ namespace GameBlog.CRUD.Abstracts
             return _dbSet.Find(id);
         }
 
-        public void Create(TEntity item)
+        public TEntity Create(TEntity item)
         {
-            _dbSet.Add(item);
+            EntityEntry<TEntity> result = _dbSet.Add(item);
             _context.SaveChanges();
+            return result.Entity;
         }
         public void Update(TEntity item)
         {

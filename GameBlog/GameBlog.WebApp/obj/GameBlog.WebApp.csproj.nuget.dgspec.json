@@ -32,6 +32,9 @@
             "projectReferences": {
               "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog\\GameBlog.DAL\\GameBlog.DAL.csproj": {
                 "projectPath": "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog\\GameBlog.DAL\\GameBlog.DAL.csproj"
+              },
+              "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog\\GameBlog.Models\\GameBlog.Models.csproj": {
+                "projectPath": "C:\\Users\\Ilya\\Documents\\KPI\\OP\\CourseWork2020\\GameBlog\\GameBlog.Models\\GameBlog.Models.csproj"
               }
             }
           }
@@ -354,6 +357,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.2, )"
+            },
+            "TinyMCE": {
+              "target": "Package",
+              "version": "[5.2.2, )"
             }
           },
           "imports": [

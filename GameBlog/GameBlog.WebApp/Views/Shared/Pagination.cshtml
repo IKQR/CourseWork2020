@@ -1,0 +1,84 @@
+﻿@model GameBlog.Models.Models.Pagination.PaginationModel
+
+
+@{
+    async Task RenderButton(string text, int number, bool isDisabled = false)
+    {
+        <li class="page-item @(number == Model.PageNumber ? "active" : "") @(isDisabled ? "disabled" : "")">
+            <a class="page-link" asp-action="@Model.Action" asp-route-page="@number">
+                @text
+            </a>
+        </li>
+
+    }
+}
+@{
+    int width = 5;
+    int toLast = Model.Total - Model.PageNumber;
+    int toFirst = Model.PageNumber;
+
+    int startFrom = Model.PageNumber - width + 1 + (toLast > width / 2 ? width / 2 : toLast);
+    int stopOn = startFrom + width - 1 + (startFrom <= 0 ? startFrom * -1 + 1 : 0);
+
+    if (startFrom <= 0)
+    {
+        startFrom = 1;
+    }
+    if (stopOn > Model.Total)
+    {
+        stopOn = Model.Total;
+    }
+
+}
+<nav aria-label="Page navigation example" class="mb-5">
+    <ul class="pagination justify-content-center">
+
+        @if (Model.HasPrevious)
+        {
+            await RenderButton("Previous", Model.PageNumber - 1);
+        }
+        else
+        {
+            await RenderButton("Previous", Model.PageNumber - 1, true);
+        }
+
+        @if (startFrom > 1)
+        {
+            await RenderButton("1", 1);
+            if (startFrom != 2)
+            {
+                RenderButton("...", 0, true);
+            }
+        }
+
+        @{
+            if (startFrom != stopOn)
+            {
+                for (int num = startFrom; num <= stopOn; num++)
+                {
+                    await RenderButton($"{num}", num);
+                }
+            }
+        }
+
+        @if (stopOn < Model.Total - 1)
+        {
+            if (stopOn != Model.Total - 2)
+            {
+                RenderButton("...", 0, true);
+            }
+        }
+
+        @{ await RenderButton($"{Model.Total}", Model.Total); }
+
+        @if (Model.HasNext)
+        {
+            await RenderButton("Next", Model.PageNumber + 1);
+        }
+        else
+        {
+            await RenderButton("Next", Model.PageNumber + 1, true);
+        }
+
+    </ul>
+</nav>

@@ -593,6 +593,7 @@
       "GameBlog.CRUD/1.0.0": {
         "dependencies": {
           "GameBlog.DAL": "1.0.0",
+          "GameBlog.Models": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0"
         },
         "runtime": {
@@ -607,6 +608,14 @@
         },
         "runtime": {
           "GameBlog.DAL.dll": {}
+        }
+      },
+      "GameBlog.Models/1.0.0": {
+        "dependencies": {
+          "GameBlog.DAL": "1.0.0"
+        },
+        "runtime": {
+          "GameBlog.Models.dll": {}
         }
       },
       "SteamGamesAPI/1.0.0": {
@@ -1037,6 +1046,11 @@
       "sha512": ""
     },
     "GameBlog.DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GameBlog.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

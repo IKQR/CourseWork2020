@@ -12,7 +12,14 @@ namespace GameBlog.Initializer
         public static async Task InitializeAsync(GameRepository repo)
         {
             Game game = new Game();
-            var allGames = Getter.GetAll().Take(100);
+            var allGames = Getter.GetAll()
+                .Where(g => 
+                    !g.Name.ToUpper().Contains("TEST") && 
+                    !g.Name.ToUpper().Contains("DLC") &&
+                    !g.Name.ToUpper().Contains("OST") 
+                    )
+                .OrderBy(g => g.Id)
+                .Take(200);
             foreach (SteamGame steamGame in allGames)
             {
                 repo.Create(new Game()

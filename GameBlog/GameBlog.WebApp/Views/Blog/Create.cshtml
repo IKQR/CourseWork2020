@@ -1,0 +1,29 @@
+﻿@model GameBlog.Models.Models.Blog.BlogCreationModel
+
+@{
+    ViewData["Title"] = "Post";
+}
+
+
+
+<form asp-action="Create" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" class="form-control" id="exampleInputEmail1">
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShortDescription">Short description</label>
+        <input asp-for="ShortDescription" class="form-control" id="exampleInputEmail1">
+        <span asp-validation-for="ShortDescription"></span>
+    </div>
+    <div class="form-group">
+        <script src="https://cdn.tiny.cloud/1/mp60zaes1e4gjvv9zz7gi2h934t55svri5o3hue42cvkd4ae/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="~/js/tinymce/blogarea.js" referrerpolicy="origin"></script>
+        <label asp-for="Content">Content</label>
+        <textarea asp-for="Content"></textarea>
+        <span asp-validation-for="Content"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Publish</button>
+</form>
+

@@ -21,7 +21,7 @@ namespace GameBlog.Initializer
             context.Database.EnsureCreated();
 
             await ImageInitializer.InitializeAsync(new AvatarImageRepository(context));
-            
+
             await GamesInitializer.InitializeAsync(new GameRepository(context));
 
             await RoleInitializer.InitializeAsync(userManager, rolesManager);

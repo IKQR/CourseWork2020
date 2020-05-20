@@ -1,0 +1,9 @@
+﻿@model GameBlog.Models.ViewModels.BlogViewModel
+
+@{
+    ViewData["Title"] = $"{Model.Title}";
+}
+
+<h2> @Model.Title </h2>
+<small>Likes : @Model.Likes</small>
+<p> @(new Microsoft.AspNetCore.Html.HtmlString(Model.Content))  </p>
