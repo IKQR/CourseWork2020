@@ -81,6 +81,7 @@ namespace GameBlog.WebApp.Controllers
                 if (!ModelState.IsValid)
                 {
                     return View(model);
+                    //some comment
                 }
                 var user = await _userManager.GetUserAsync(User);
                 Post post = new Post
