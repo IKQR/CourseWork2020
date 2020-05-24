@@ -18,6 +18,7 @@ namespace GameBlog.WebApp.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly PostRepository _postRepository;
+        private readonly PostLikeAndViewRepository _postLikesAndViewRepository;
 
         public BlogController(
             UserManager<User> userManager,
@@ -26,6 +27,7 @@ namespace GameBlog.WebApp.Controllers
         {
             _userManager = userManager;
             _postRepository = new PostRepository(context);
+            _postLikesAndViewRepository = new PostLikeAndViewRepository(context);
         }
 
         [AllowAnonymous]
@@ -50,6 +52,12 @@ namespace GameBlog.WebApp.Controllers
             BlogViewModel model = await _postRepository.GetById(id);
             if (model == null || !model.Permitted)
             {
+                _postLikesAndViewRepository.Update(new PostLikeAndView
+                {
+                    Likes = model.Likes,
+                    Views = model.Views+1,
+                    Id = await _postLikesAndViewRepository.GetIdByPostId(id)
+                });
                 return RedirectToAction("Index");
             }
             return View(model);
@@ -57,7 +65,7 @@ namespace GameBlog.WebApp.Controllers
 
         [HttpGet]
         [Route("/post")]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Post()
         {
             BlogCreationModel model = new BlogCreationModel();
             return View(model);
@@ -66,7 +74,7 @@ namespace GameBlog.WebApp.Controllers
         [HttpPost]
         [Route("/post")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(BlogCreationModel model)
+        public async Task<IActionResult> Post(BlogCreationModel model)
         {
             try
             {
@@ -77,21 +85,21 @@ namespace GameBlog.WebApp.Controllers
                 var user = await _userManager.GetUserAsync(User);
                 Post post = new Post
                 {
-                    Likes = 0,
-                    Views = 0,
+                    
                     Permitted = true,
                     Title = model.Title,
-                    ShortDescriprion = model.ShortDescription,
+                    ShortDescription = model.ShortDescription,
                     PostContent = new PostContent
                     {
                         Content = model.Content
                     },
-                    UserId = user.Id
+                    UserId = user.Id,
+                    PostLikeAndView = new PostLikeAndView()
                 };
                 post = _postRepository.Create(post);
                 if (post != null)
                 {
-                    List<int> uPosts = user.PostsId.ToList();
+                    List<int> uPosts = user.PostsId == null ? new List<int>() : user.PostsId.ToList();
                     uPosts.Add(post.Id);
                     user.PostsId = uPosts.ToArray();
                     await _userManager.UpdateAsync(user);
@@ -102,7 +110,7 @@ namespace GameBlog.WebApp.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                throw;
+                return View(model);
             }
         }
     }

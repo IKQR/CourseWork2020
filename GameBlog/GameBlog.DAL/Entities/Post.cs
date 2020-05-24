@@ -13,12 +13,12 @@ namespace GameBlog.DAL.Entities
         [MaxLength(32), Required]
         public string Title { get; set; }
         [MaxLength(128), Required]
-        public string ShortDescriprion { get; set; }
-        [DefaultValue(0), NotNull]
-        public int Likes { get; set; }
-        [DefaultValue(0), NotNull]
-        public int Views { get; set; }
-        
+        public string ShortDescription { get; set; }
+
+        [ForeignKey("PostLikeAndView")]
+        public int LikeAndViewId { get; set; }
+        public PostLikeAndView PostLikeAndView { get; set; }
+
         [ForeignKey("PostContent")]
         public int PostContentId { get; set; }
         public PostContent PostContent { get; set; }

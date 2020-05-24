@@ -41,6 +41,14 @@
                         Game list
                     </a>
                 </li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Blog" asp-action="Post">
+                            Make new post
+                        </a>
+                    </li>
+                }
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">

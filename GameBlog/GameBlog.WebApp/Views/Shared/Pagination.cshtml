@@ -54,7 +54,7 @@
         @{
             if (startFrom != stopOn)
             {
-                for (int num = startFrom; num <= stopOn; num++)
+                for (int num = startFrom; num < stopOn; num++)
                 {
                     await RenderButton($"{num}", num);
                 }

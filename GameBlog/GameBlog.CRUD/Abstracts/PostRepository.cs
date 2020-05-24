@@ -22,14 +22,16 @@ namespace GameBlog.CRUD.Abstracts
                         on p.UserId equals u.Id
                  join c in _context.Set<PostContent>()
                      on p.PostContentId equals c.Id
+                     join lav in _context.Set<PostLikeAndView>()
+                         on p.PostLikeAndView.Id equals lav.Id
                  where p.Id == id
                  select new BlogViewModel()
                  {
                      Title = p.Title,
-                     ShortDescriprion = p.ShortDescriprion,
+                     ShortDescriprion = p.ShortDescription,
                      Permitted = p.Permitted,
-                     Likes = p.Likes,
-                     Views = p.Views,
+                     Likes = lav.Likes,
+                     Views = lav.Views,
                      Content = c.Content,
                      AuthorName = u.UserName,
                      AuthorAvatarImageId = u.AvatarImageId
@@ -42,13 +44,15 @@ namespace GameBlog.CRUD.Abstracts
                 (from p in _dbSet
                     join u in _context.Set<User>() 
                         on p.UserId equals u.Id
+                    join lav in _context.Set<PostLikeAndView>()
+                        on p.PostLikeAndView.Id equals lav.Id
                  select new PreviewBlogViewModel()
                  {
                      Title = p.Title,
-                     ShortDescriprion = p.ShortDescriprion,
+                     ShortDescriprion = p.ShortDescription,
                      Permitted = p.Permitted,
-                     Likes = p.Likes,
-                     Views = p.Views,
+                     Likes = lav.Likes,
+                     Views = lav.Views,
                      AuthorName = u.UserName,
                      AuthorAvatarImageId = u.AvatarImageId
                  });
@@ -60,13 +64,15 @@ namespace GameBlog.CRUD.Abstracts
                 (from p in _dbSet
                     join u in _context.Set<User>()
                         on p.UserId equals u.Id
+                    join lav in _context.Set<PostLikeAndView>()
+                        on p.PostLikeAndView.Id equals lav.Id
                  select new PreviewBlogViewModel()
                  {
                      Title = p.Title,
-                     ShortDescriprion = p.ShortDescriprion,
+                     ShortDescriprion = p.ShortDescription,
                      Permitted = p.Permitted,
-                     Likes = p.Likes,
-                     Views = p.Views,
+                     Likes = lav.Likes,
+                     Views = lav.Views,
                      AuthorName = u.UserName,
                      AuthorAvatarImageId = u.AvatarImageId
                  });

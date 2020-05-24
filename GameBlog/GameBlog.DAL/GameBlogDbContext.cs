@@ -33,6 +33,7 @@ namespace GameBlog.DAL.Entities
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<AvatarImage> AvatarImages { get; set; }
         public DbSet<PostContent> PostContents { get; set; }
+        public DbSet<PostLikeAndView> PostLikesAndViews { get; set; }
         public DbSet<IdentityUserClaim<int>> IdentityUserClaim { get; set; }
     }
 }
