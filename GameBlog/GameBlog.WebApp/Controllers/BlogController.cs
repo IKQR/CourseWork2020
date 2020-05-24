@@ -82,6 +82,7 @@ namespace GameBlog.WebApp.Controllers
                 {
                     return View(model);
                     //some comment
+                    //another commit
                 }
                 var user = await _userManager.GetUserAsync(User);
                 Post post = new Post
