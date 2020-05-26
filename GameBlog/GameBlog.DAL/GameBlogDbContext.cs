@@ -1,10 +1,8 @@
-﻿using GameBlog.DAL.Entities;
-using GameBlog.Models.Enums;
+﻿using GameBlog.DAL.Enums;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
-using System.Collections.Generic;
 
 namespace GameBlog.DAL.Entities
 {
@@ -16,11 +14,16 @@ namespace GameBlog.DAL.Entities
                 "ImageType",
                 new Npgsql.NameTranslation.NpgsqlNullNameTranslator()
             );
+            NpgsqlConnection.GlobalTypeMapper.MapEnum<PostType>(
+                "PostType",
+                new Npgsql.NameTranslation.NpgsqlNullNameTranslator()
+            );
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             
+            builder.ForNpgsqlHasEnum(typeof(PostType).Name, typeof(PostType).GetEnumNames());
             builder.ForNpgsqlHasEnum(typeof(ImageType).Name, typeof(ImageType).GetEnumNames());
         }
 
@@ -29,7 +32,6 @@ namespace GameBlog.DAL.Entities
         public DbSet<Post> Posts { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Comment> Comments { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<AvatarImage> AvatarImages { get; set; }
         public DbSet<PostContent> PostContents { get; set; }

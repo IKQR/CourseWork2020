@@ -22,11 +22,11 @@ namespace GameBlog.WebApp.Controllers
         public async Task<IActionResult> Index(int? page)
         {
             int height = 15;
-            List<GameViewModel> models = await _gameRepository.GetGameViewModels();
+            List<GameViewModel> models = await _gameRepository.GetGameViewModels(((page ?? 1) - 1) * height, height);
             GenericPaginatedModel<GameViewModel> paginatedModel = new GenericPaginatedModel<GameViewModel>()
             {
-                Models = models.Skip(((page??1)-1)*height).Take(height),
-                Pagination = new PaginationModel(models.Count, page ?? 1, height, "Index")
+                Models = models,
+                Pagination = new PaginationModel(_gameRepository.GetCount(), page ?? 1, height, "Index")
             };
             return View(paginatedModel);
         }

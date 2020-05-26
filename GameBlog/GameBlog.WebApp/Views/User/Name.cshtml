@@ -1,5 +1,14 @@
-﻿@{
-    ViewData["Title"] = "Image";
+﻿@model GameBlog.Models.Models.User.NameChange
+
+@{
+    ViewData["Title"] = "Change name";
 }
 
-<h2>Now this action is unavailable. Try next time</h2>
+<form method="post" asp-controller="User" asp-action="Name">
+    <div class="form-group">
+        <label asp-for="Name">New name</label>
+        <input asp-for="Name" type="text" class="form-control">
+        <span asp-validation-for="Name"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

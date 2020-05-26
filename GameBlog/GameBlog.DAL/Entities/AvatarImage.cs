@@ -1,4 +1,4 @@
-﻿using GameBlog.Models.Enums;
+﻿using GameBlog.DAL.Enums;
 
 namespace GameBlog.DAL.Entities
 {

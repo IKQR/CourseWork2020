@@ -19,7 +19,10 @@ namespace GameBlog.CRUD.Abstracts
                 join post in _context.Set<Post>()
                     on lav.Id equals post.LikeAndViewId
                 where post.Id == id
-                select new PostLikeAndView());
+                select new PostLikeAndView()
+                {
+                    Id = lav.Id
+                });
 
             return (await rezult.FirstOrDefaultAsync()).Id;
         }

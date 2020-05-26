@@ -1,11 +1,11 @@
 ﻿using GameBlog.CRUD.Abstracts;
 using GameBlog.DAL.Entities;
-using GameBlog.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using GameBlog.DAL.Enums;
 
 namespace GameBlog.Initializer
 {

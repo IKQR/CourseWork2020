@@ -7,8 +7,9 @@ namespace GameBlog.Models.ViewModels
 {
     public class PreviewBlogViewModel
     {
+        public int Id { get; set; }
         public string Title { get; set; }
-        public string ShortDescriprion { get; set; }
+        public string ShortDescription { get; set; }
         public int Likes { get; set; }
         public int Views { get; set; }
 

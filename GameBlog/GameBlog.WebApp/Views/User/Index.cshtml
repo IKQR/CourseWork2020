@@ -4,9 +4,14 @@
 }
 
 <h1>Index</h1>
-
-<img src="@Model.AvatarUrl" />
-<a asp-controller="User" asp-action="Image">Change Image</a>
-<h1> Email : @Model.Email </h1>
-<h1> Name : @Model.Name </h1>
-<a asp-controller="User" asp-action="Name">Change name</a>
+<div class="d-flex w-100 justify-content-between">
+    <img src="@Model.AvatarUrl" class="rounded float-left" />
+    <div>
+        <h1> Email : @Model.Email </h1>
+        <h1> Name : @Model.Name </h1>
+        <div class="btn-group-lg">
+            <a class="btn btn-success btn-block" asp-controller="User" asp-action="Image">Change image</a>
+            <a class="btn btn-success btn-block" asp-controller="User" asp-action="Name">Change name</a>
+        </div>
+    </div>
+</div>

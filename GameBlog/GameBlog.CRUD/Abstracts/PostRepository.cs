@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using GameBlog.CRUD.Repositories;
 using GameBlog.DAL.Entities;
+using GameBlog.DAL.Enums;
 using GameBlog.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,8 +28,9 @@ namespace GameBlog.CRUD.Abstracts
                  where p.Id == id
                  select new BlogViewModel()
                  {
+                     Id = p.Id,
                      Title = p.Title,
-                     ShortDescriprion = p.ShortDescription,
+                     ShortDescription = p.ShortDescription,
                      Permitted = p.Permitted,
                      Likes = lav.Likes,
                      Views = lav.Views,
@@ -48,8 +50,31 @@ namespace GameBlog.CRUD.Abstracts
                         on p.PostLikeAndView.Id equals lav.Id
                  select new PreviewBlogViewModel()
                  {
+                     Id = p.Id,
                      Title = p.Title,
-                     ShortDescriprion = p.ShortDescription,
+                     ShortDescription = p.ShortDescription,
+                     Permitted = p.Permitted,
+                     Likes = lav.Likes,
+                     Views = lav.Views,
+                     AuthorName = u.UserName,
+                     AuthorAvatarImageId = u.AvatarImageId
+                 });
+            return await models.ToListAsync();
+        }
+        public async Task<List<PreviewBlogViewModel>> GetBlogViewModels(PostType type)
+        {
+            IQueryable<PreviewBlogViewModel> models =
+                (from p in _dbSet
+                    join u in _context.Set<User>() 
+                        on p.UserId equals u.Id
+                    join lav in _context.Set<PostLikeAndView>()
+                        on p.PostLikeAndView.Id equals lav.Id
+                    where p.Type == type
+                 select new PreviewBlogViewModel()
+                 {
+                     Id = p.Id,
+                     Title = p.Title,
+                     ShortDescription = p.ShortDescription,
                      Permitted = p.Permitted,
                      Likes = lav.Likes,
                      Views = lav.Views,
@@ -68,8 +93,9 @@ namespace GameBlog.CRUD.Abstracts
                         on p.PostLikeAndView.Id equals lav.Id
                  select new PreviewBlogViewModel()
                  {
+                     Id = p.Id,
                      Title = p.Title,
-                     ShortDescriprion = p.ShortDescription,
+                     ShortDescription = p.ShortDescription,
                      Permitted = p.Permitted,
                      Likes = lav.Likes,
                      Views = lav.Views,

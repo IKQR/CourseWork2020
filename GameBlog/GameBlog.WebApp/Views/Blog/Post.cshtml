@@ -1,4 +1,5 @@
-﻿@model GameBlog.Models.Models.Blog.BlogCreationModel
+﻿@using GameBlog.DAL.Enums
+@model GameBlog.Models.Models.Blog.BlogCreationModel
 
 @{
     ViewData["Title"] = "Post";
@@ -8,13 +9,22 @@
 
 <form asp-action="Post" method="POST" enctype="multipart/form-data">
     <div class="form-group">
+        <label asp-for="Type">Type of your post</label>
+        <select asp-for="Type" class="form-control">
+            @foreach (var type in Enum.GetValues(typeof(PostType)).Cast<PostType>().Reverse())
+            {
+                <option>@type.ToString()</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
         <label asp-for="Title">Title</label>
-        <input asp-for="Title" class="form-control" id="exampleInputEmail1">
+        <input asp-for="Title" class="form-control">
         <span asp-validation-for="Title"></span>
     </div>
     <div class="form-group">
         <label asp-for="ShortDescription">Short description</label>
-        <input asp-for="ShortDescription" class="form-control" id="exampleInputEmail1">
+        <input asp-for="ShortDescription" class="form-control">
         <span asp-validation-for="ShortDescription"></span>
     </div>
     <div class="form-group">

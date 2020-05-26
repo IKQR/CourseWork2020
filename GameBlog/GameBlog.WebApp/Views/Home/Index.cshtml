@@ -3,6 +3,6 @@
 }
 <div class="jumbotron">
     <h1>
-        Hello, @User.Identity.Name
+        Hello, @(String.IsNullOrEmpty(User.Identity.Name) ? "friend :)" : User.Identity.Name)
     </h1>
 </div>

@@ -5,5 +5,9 @@
     toolbar_mode: 'floating',
     tinycomments_mode: 'embedded',
     tinycomments_author: 'Author name',
-    a11y_advanced_options: true
+    a11y_advanced_options: true,
+    image_dimensions: false,
+    image_class_list: [
+        { title: 'Scalable', value: 'img-thumbnail' },
+    ]
 });

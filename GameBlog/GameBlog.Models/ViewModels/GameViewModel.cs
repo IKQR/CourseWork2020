@@ -6,6 +6,7 @@ namespace GameBlog.Models.ViewModels
 {
     public class GameViewModel
     {
+        public Int64 SteamId { get; set; }
         public string Name { get; set; }
     }
 }

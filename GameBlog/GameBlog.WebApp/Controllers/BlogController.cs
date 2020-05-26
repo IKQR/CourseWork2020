@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GameBlog.CRUD.Abstracts;
 using GameBlog.DAL.Entities;
+using GameBlog.DAL.Enums;
 using GameBlog.Models.Models.Blog;
 using GameBlog.Models.Models.Pagination;
 using GameBlog.Models.ViewModels;
@@ -31,18 +32,32 @@ namespace GameBlog.WebApp.Controllers
         }
 
         [AllowAnonymous]
-        [Route("/blog")]
+        [Route("/article")]
         public async Task<IActionResult> Index(int? page)
         {
-            int height = 1;
+            int height = 7;
             int skip = ((page ?? 1) - 1) * height;
-            List<PreviewBlogViewModel> models = await _postRepository.GetBlogViewModels();
+            List<PreviewBlogViewModel> models = await _postRepository.GetBlogViewModels(PostType.Article);
             GenericPaginatedModel<PreviewBlogViewModel> paginatedModel = new GenericPaginatedModel<PreviewBlogViewModel>()
             {
                 Models = models.Skip(skip).Take(height),
                 Pagination = new PaginationModel(models.Count, page ?? 1, height, "Index")
             };
-            return View(paginatedModel);
+            return View("Index", paginatedModel);
+        }
+        [AllowAnonymous]
+        [Route("/review")]
+        public async Task<IActionResult> Review(int? page)
+        {
+            int height = 7;
+            int skip = ((page ?? 1) - 1) * height;
+            List<PreviewBlogViewModel> models = await _postRepository.GetBlogViewModels(PostType.Review);
+            GenericPaginatedModel<PreviewBlogViewModel> paginatedModel = new GenericPaginatedModel<PreviewBlogViewModel>()
+            {
+                Models = models.Skip(skip).Take(height),
+                Pagination = new PaginationModel(models.Count, page ?? 1, height, "Review")
+            };
+            return View("Index", paginatedModel);
         }
 
         [AllowAnonymous]
@@ -52,14 +67,14 @@ namespace GameBlog.WebApp.Controllers
             BlogViewModel model = await _postRepository.GetById(id);
             if (model == null || !model.Permitted)
             {
-                _postLikesAndViewRepository.Update(new PostLikeAndView
-                {
-                    Likes = model.Likes,
-                    Views = model.Views+1,
-                    Id = await _postLikesAndViewRepository.GetIdByPostId(id)
-                });
                 return RedirectToAction("Index");
             }
+            _postLikesAndViewRepository.Update(new PostLikeAndView
+            {
+                Likes = model.Likes,
+                Views = model.Views + 1,
+                Id = await _postLikesAndViewRepository.GetIdByPostId(id)
+            });
             return View(model);
         }
 
@@ -81,8 +96,6 @@ namespace GameBlog.WebApp.Controllers
                 if (!ModelState.IsValid)
                 {
                     return View(model);
-                    //some comment
-                    //another commit
                 }
                 var user = await _userManager.GetUserAsync(User);
                 Post post = new Post
@@ -91,12 +104,13 @@ namespace GameBlog.WebApp.Controllers
                     Permitted = true,
                     Title = model.Title,
                     ShortDescription = model.ShortDescription,
+                    Type = model.Type,
                     PostContent = new PostContent
                     {
                         Content = model.Content
                     },
                     UserId = user.Id,
-                    PostLikeAndView = new PostLikeAndView()
+                    PostLikeAndView = new PostLikeAndView(),
                 };
                 post = _postRepository.Create(post);
                 if (post != null)

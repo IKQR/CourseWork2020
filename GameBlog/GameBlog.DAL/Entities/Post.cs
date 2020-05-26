@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Mime;
+using GameBlog.DAL.Enums;
 
 namespace GameBlog.DAL.Entities
 {
@@ -14,17 +15,20 @@ namespace GameBlog.DAL.Entities
         public string Title { get; set; }
         [MaxLength(128), Required]
         public string ShortDescription { get; set; }
+        [DefaultValue(false)]
+        public bool Permitted { get; set; }
+        public PostType Type { get; set; }
+
 
         [ForeignKey("PostLikeAndView")]
         public int LikeAndViewId { get; set; }
         public PostLikeAndView PostLikeAndView { get; set; }
 
+
         [ForeignKey("PostContent")]
         public int PostContentId { get; set; }
         public PostContent PostContent { get; set; }
 
-        [DefaultValue(false)]
-        public bool Permitted { get; set; }
 
         [ForeignKey("User")]
         public int UserId { get; set; }

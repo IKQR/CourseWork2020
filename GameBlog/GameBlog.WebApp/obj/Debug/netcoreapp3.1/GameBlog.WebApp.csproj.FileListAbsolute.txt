@@ -184,9 +184,12 @@ C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\bin\Debug
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Game\Index.cshtml.g.cs
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Pagination.cshtml.g.cs
-C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\GameBlog.WebApp.csproj.CoreCompileInputs.cache
-C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\GameBlog.WebApp.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\GameBlog.WebApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Index.cshtml.g.cs
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Item.cshtml.g.cs
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Post.cshtml.g.cs
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\GameBlog.WebApp.csproj.CoreCompileInputs.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\GameBlog.WebApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\GameBlog.WebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Posts.cshtml.g.cs
