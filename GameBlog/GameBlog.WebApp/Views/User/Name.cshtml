@@ -9,6 +9,7 @@
         <label asp-for="Name">New name</label>
         <input asp-for="Name" type="text" class="form-control">
         <span asp-validation-for="Name"></span>
+        <div asp-validation-summary="ModelOnly" id="myCustomSummary"></div>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

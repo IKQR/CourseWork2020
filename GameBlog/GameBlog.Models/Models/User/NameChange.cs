@@ -9,6 +9,7 @@ namespace GameBlog.Models.Models.User
     {
         [Required]
         [Display(Name = "Name")]
+        [MaxLength(30, ErrorMessage = "Name is too long")]
         [RegularExpression(RegexConstants.Name, ErrorMessage = "Some characters you have used are not allowed")]
         public string Name { get; set; }
     }

@@ -74,3 +74,8 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+#myCustomSummary {
+    list-style: none;
+    color: red;
+}

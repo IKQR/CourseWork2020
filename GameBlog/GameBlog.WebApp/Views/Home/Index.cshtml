@@ -1,8 +1,12 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@using GameBlog.DAL.Entities
+@inject UserManager<User> userManager
+@{
     ViewData["Title"] = "Home";
+    string name = (await userManager.GetUserAsync(User) ?? new User(){UserName = "friend :)"}).UserName;
 }
 <div class="jumbotron">
     <h1>
-        Hello, @(String.IsNullOrEmpty(User.Identity.Name) ? "friend :)" : User.Identity.Name)
+        Hello, @name
     </h1>
 </div>
