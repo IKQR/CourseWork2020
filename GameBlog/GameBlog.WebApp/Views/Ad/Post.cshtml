@@ -1,0 +1,13 @@
+﻿@model GameBlog.Models.ViewModels.AdViewModel
+
+@{
+    ViewData["Title"] = "Ad";
+}
+<form asp-action="Post" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Message">Content</label>
+        <textarea asp-for="Message" class="form-control"></textarea>
+        <span asp-validation-for="Message"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Publish</button>
+</form>

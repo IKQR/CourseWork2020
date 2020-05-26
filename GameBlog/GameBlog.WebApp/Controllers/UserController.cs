@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GameBlog.CRUD.Abstracts;
 using GameBlog.DAL.Entities;
+using GameBlog.Models.Models.Pagination;
 using GameBlog.Models.Models.User;
 using GameBlog.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -18,11 +19,14 @@ namespace GameBlog.WebApp.Controllers
     public class UserController : Controller
     {
         private readonly UserManager<User> _userManager;
+        private readonly PostRepository _postRepository;
 
-        public UserController(UserManager<User> userManager)
+        public UserController(UserManager<User> userManager, GameBlogDbContext context)
         {
             _userManager = userManager;
+            _postRepository = new PostRepository(context);
         }
+        [Route("account")]
         public async Task<IActionResult> Index()
         {
             try
@@ -48,12 +52,14 @@ namespace GameBlog.WebApp.Controllers
             return View();
         }
         [HttpGet]
+        [Route("changeName")]
         public async Task<IActionResult> Name()
         {
             NameChange model = new NameChange();
             return View(model);
         }
         [HttpPost]
+        [Route("changeName")]
         public async Task<IActionResult> Name(NameChange model)
         {
             if (ModelState.IsValid)
@@ -65,15 +71,26 @@ namespace GameBlog.WebApp.Controllers
                     return RedirectToAction("Index");
                 foreach (IdentityError error in result.Errors)
                 {
-                    ModelState.AddModelError("",error.Description);
+                    ModelState.AddModelError("", error.Description);
                 }
             }
             return View(model);
         }
-
-        public async Task<IActionResult> Posts()
+        [Route("posts")]
+        public async Task<IActionResult> Posts(int? page)
         {
-            return View();
+            int size = 15;
+            User user = await _userManager.GetUserAsync(User);
+            List<PreviewBlogViewModel> models =  
+                await _postRepository.GetBlogViewModels((user.PostsId ?? new int[]{}).ToList());
+            GenericPaginatedModel<PreviewBlogViewModel> pagiModel = 
+                new GenericPaginatedModel<PreviewBlogViewModel>
+            {
+                Models = models.Skip(size*((page ?? 1)-1)).Take(size),
+                Pagination = new PaginationModel(models.Count, page ?? 1, size, "Posts")
+            };
+            return View(pagiModel);
         }
+
     }
 }

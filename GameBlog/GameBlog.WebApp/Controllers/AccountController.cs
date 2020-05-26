@@ -46,7 +46,6 @@ namespace GameBlog.WebApp.Controllers
                 return RedirectToAction("Logout");
             if (ModelState.IsValid)
             {
-
                 User user = new User
                 {
                     Email = model.Email,
@@ -80,6 +79,7 @@ namespace GameBlog.WebApp.Controllers
         [HttpGet]
         public async Task<IActionResult> Login(string returnUrl)
         {
+            returnUrl = Url.Action("Index", "Home");
             if (User.Identity.IsAuthenticated)
                 return RedirectToAction("Logout");
             LoginViewModel model = new LoginViewModel
@@ -134,6 +134,7 @@ namespace GameBlog.WebApp.Controllers
         [HttpPost]
         public IActionResult ExternalLogin(string provider, string returnUrl)
         {
+            returnUrl = Url.Action("Index", "Home");
             var redirectUrl = Url.Action("ExternalLoginCallback",
                 "Account", new { ReturnUrl = returnUrl });
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GameBlog.CRUD\GameBlog.CRUD.csproj" />
+    <ProjectReference Include="..\GameBlog.DAL\GameBlog.DAL.csproj" />
+    <ProjectReference Include="..\GameBlog.Initializer\GameBlog.Initializer.csproj" />
+    <ProjectReference Include="..\GameBlog.Models\GameBlog.Models.csproj" />
+    <ProjectReference Include="..\GameBlog.WebApp\GameBlog.WebApp.csproj" />
+    <ProjectReference Include="..\SteamGamesAPI\SteamGamesAPI.csproj" />
+  </ItemGroup>
+
+</Project>

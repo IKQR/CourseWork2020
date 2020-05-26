@@ -193,3 +193,5 @@ C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\GameBlog.WebApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\GameBlog.WebApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Posts.cshtml.g.cs
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Ad\Index.cshtml.g.cs
+C:\Users\Ilya\Documents\KPI\OP\CourseWork2020\GameBlog\GameBlog.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Ad\Post.cshtml.g.cs

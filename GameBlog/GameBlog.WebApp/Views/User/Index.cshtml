@@ -3,7 +3,7 @@
     ViewData["Title"] = "Your account";
 }
 
-<h1>Index</h1>
+<h1>Your account</h1>
 <div class="row">
     <img src="@Model.AvatarUrl" class="rounded float-left" />
     <div class="ml-4">
@@ -12,6 +12,7 @@
         <div class="btn-group-lg">
             @*<a class="btn btn-success btn-block" asp-controller="User" asp-action="Image">Change image</a>*@
             <a class="btn btn-success btn-block" asp-controller="User" asp-action="Name">Change name</a>
+            <a class="btn btn-info btn-block" asp-controller="User" asp-action="Posts">Change name</a>
         </div>
     </div>
 </div>

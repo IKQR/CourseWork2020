@@ -19,7 +19,7 @@ namespace GameBlog.WebApp
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                //await DbInitializer.InitializeAsync(services);
+                await DbInitializer.InitializeAsync(services);
             }
             await host.RunAsync();
         }

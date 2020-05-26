@@ -1,5 +1,33 @@
-﻿@{
-    ViewData["Title"] = "Post";
+﻿@model GameBlog.Models.Models.Pagination.GenericPaginatedModel<GameBlog.Models.ViewModels.PreviewBlogViewModel>
+@{
+    ViewData["Title"] = "Posts";
 }
+<div class="container">
+    @if (Model.Models.Any())
+    {
+        <div class="list-group">
+            @foreach (var mod in Model.Models)
+            {
+                <a class="list-group-item list-group-item-action" asp-action="Item" asp-controller="Blog" asp-route-id="@mod.Id">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"> @mod.Title </h5>
+                    </div>
+                    <div class="d-flex w-100 justify-content-between">
+                        <small>
+                            @(mod.ShortDescription.Length > 100 ? mod.ShortDescription.Substring(0, 100) + "..." : mod.ShortDescription);
+                        </small>
+                        <small>Views : @mod.Views</small>
+                        <small>Likes : @mod.Likes</small>
+                    </div>
+                </a>
 
-<h2>Now this action is unavailable. Try next time</h2>
+            }
+        </div>
+
+        await Html.RenderPartialAsync("Pagination", Model.Pagination);
+    }
+    else
+    {
+        <p>You don't have any Article or review. Do you want to make one? <a asp-controller="Blog" asp-action="Post"> Make It!</a></p>
+    }
+</div>

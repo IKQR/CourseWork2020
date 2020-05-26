@@ -62,8 +62,9 @@ namespace GameBlog.WebApp.Controllers
 
         [AllowAnonymous]
         [Route("/blog/{id:int}")]
-        public async Task<IActionResult> Item(int id)
+        public async Task<IActionResult> Item(int id, bool? view)
         {
+            User user = await _userManager.GetUserAsync(User);
             BlogViewModel model = await _postRepository.GetById(id);
             if (model == null || !model.Permitted)
             {
@@ -72,9 +73,14 @@ namespace GameBlog.WebApp.Controllers
             _postLikesAndViewRepository.Update(new PostLikeAndView
             {
                 Likes = model.Likes,
-                Views = model.Views + 1,
+                Views = model.Views + ((view ?? true) ? 1 : 0),
                 Id = await _postLikesAndViewRepository.GetIdByPostId(id)
             });
+            model.isLiked = false;
+            if (user != null)
+                if (user.LikedPostsId != null)
+                    if (user.LikedPostsId.ToList().Contains(id))
+                        model.isLiked = true;
             return View(model);
         }
 
@@ -100,7 +106,7 @@ namespace GameBlog.WebApp.Controllers
                 var user = await _userManager.GetUserAsync(User);
                 Post post = new Post
                 {
-                    
+
                     Permitted = true,
                     Title = model.Title,
                     ShortDescription = model.ShortDescription,

@@ -1,0 +1,24 @@
+﻿@model GameBlog.Models.Models.Pagination.GenericPaginatedModel<GameBlog.Models.Models.AdModel>
+@{
+    ViewData["Title"] = "Ads";
+}
+<div class="container">
+
+    <div class="list-group">
+        @foreach (var mod in Model.Models)
+        {
+            <div class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"> @mod.UserName </h5>
+                </div>
+                <div class="d-flex w-100 justify-content-between">
+                    <small>
+                        @(mod.Message)
+                    </small>
+                </div>
+            </div>
+        }
+    </div>
+
+    @{await Html.RenderPartialAsync("Pagination", Model.Pagination);}
+</div>

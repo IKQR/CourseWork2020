@@ -9,4 +9,40 @@
     <h1>
         Hello, @name
     </h1>
+    <h2>You can visit next pages</h2>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action">
+            <a class="nav-link" asp-controller="Blog" asp-action="Index">
+                Articles
+            </a>
+        </li>
+        <li class="list-group-item list-group-item-action">
+            <a class="nav-link" asp-controller="Blog" asp-action="Review">
+                Reviews
+            </a>
+        </li>
+        <li class="list-group-item list-group-item-action">
+            <a class="nav-link" asp-controller="Game" asp-action="Index">
+                Game list
+            </a>
+        </li>
+        <li class="list-group-item list-group-item-action">
+            <a class="nav-link" asp-controller="Ad" asp-action="Index">
+                Find teammates
+            </a>
+        </li>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <li class="list-group-item list-group-item-action">
+                <a class="nav-link" asp-controller="Blog" asp-action="Post">
+                    <strong>Make new post</strong>
+                </a>
+            </li>
+            <li class="list-group-item list-group-item-action">
+                <a class="nav-link" asp-controller="Ad" asp-action="Post">
+                    <strong>Make Ad</strong>
+                </a>
+            </li>
+        }
+    </ul>
 </div>

@@ -10,10 +10,8 @@ namespace GameBlog.DAL.Entities
         [Key]
         public int Id { get; set; }
 
-        public int GameId { get; set; }
-        public Game Game { get; set; }
-
-        public int UserId { get; set; }
+        [ForeignKey("User")]
+        public int CreatorId { get; set; }
         public User User { get; set; }
 
         [MaxLength(128), AllowNull]

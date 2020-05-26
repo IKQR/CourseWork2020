@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameBlog.CRUD.Abstracts.GenericRepository&lt;TEntity&gt;" Collapsed="true">
+    <Position X="12.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBlog.CRUD.Abstracts.AdRepository">
+    <Position X="11.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBlog.CRUD.Abstracts.AvatarImageRepository">
+    <Position X="9.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBlog.CRUD.Abstracts.CommentRepository">
+    <Position X="14.25" Y="3" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBlog.CRUD.Abstracts.GameRepository">
+    <Position X="14.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBlog.CRUD.Abstracts.PostContentRepository">
+    <Position X="11.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBlog.CRUD.Abstracts.PostLikeAndViewRepository">
+    <Position X="9" Y="3" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBlog.CRUD.Abstracts.PostRepository">
+    <Position X="11.25" Y="3" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBlog.CRUD.Abstracts.RoleRepository">
+    <Position X="16.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBlog.CRUD.Abstracts.UserRepository">
+    <Position X="16.5" Y="5" Width="1.5" />
+    <InheritanceLine Type="GameBlog.CRUD.Abstracts.GenericRepository&lt;TEntity&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="13.25" Y="1.812" />
+        <Point X="13.25" Y="4.625" />
+        <Point X="16.5" Y="4.625" />
+        <Point X="16.5" Y="5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBlog.WebApp.Controllers.AccountController">
+    <Position X="2" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.WebApp.Controllers.BlogController">
+    <Position X="6.25" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.WebApp.Controllers.GameController">
+    <Position X="6.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.WebApp.Controllers.HomeController">
+    <Position X="2" Y="6" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.WebApp.Controllers.RolesController">
+    <Position X="6.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.WebApp.Controllers.UserController">
+    <Position X="4.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.WebApp.Controllers.ImageController">
+    <Position X="2" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.WebApp.Controllers.Ajax.CommentAjaxController">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.WebApp.Controllers.AdController">
+    <Position X="4.25" Y="6" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.DAL.Entities.Role">
+    <Position X="20.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.DAL.Entities.User">
+    <Position X="24.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.DAL.Entities.UserRole">
+    <Position X="22.5" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.DAL.Entities.Ad">
+    <Position X="19" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.DAL.Entities.AvatarImage">
+    <Position X="20.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.DAL.Entities.Comment">
+    <Position X="22.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.DAL.Entities.Game">
+    <Position X="24.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.DAL.Entities.Post">
+    <Position X="19" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.DAL.Entities.PostContent">
+    <Position X="20.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.DAL.Entities.PostLikeAndView">
+    <Position X="22.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.DAL.Enums.ImageType">
+    <Position X="19" Y="8.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.DAL.Enums.PostType">
+    <Position X="20.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.Models.Blog.BlogCreationModel">
+    <Position X="3.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.Models.Blog.CommentCreationModel">
+    <Position X="7.25" Y="16.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.Models.Pagination.GenericPaginatedModel&lt;TModel&gt;">
+    <Position X="5.25" Y="14.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.Models.Pagination.PaginationModel">
+    <Position X="9.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.Models.User.NameChange">
+    <Position X="9.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.Models.AdModel">
+    <Position X="7.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.Models.ErrorViewModel">
+    <Position X="3.25" Y="16.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.ViewModels.AdViewModel">
+    <Position X="5.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.ViewModels.BlogViewModel">
+    <Position X="3.25" Y="9.25" Width="1.5" />
+    <InheritanceLine Type="GameBlog.Models.ViewModels.PreviewBlogViewModel" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="9.25" />
+        <Point X="6" Y="8.875" />
+        <Point X="4" Y="8.875" />
+        <Point X="4" Y="9.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.ViewModels.CommentModel">
+    <Position X="5.25" Y="16.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.ViewModels.ChangeRoleViewModel">
+    <Position X="9.25" Y="16" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.ViewModels.GameViewModel">
+    <Position X="7.25" Y="18.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.ViewModels.LoginViewModel">
+    <Position X="3.25" Y="14" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.ViewModels.PreviewBlogViewModel">
+    <Position X="5.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.ViewModels.RegisterViewModel">
+    <Position X="7.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.ViewModels.UserViewModel">
+    <Position X="9.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameBlog.Models.RegexConstants">
+    <Position X="7.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
