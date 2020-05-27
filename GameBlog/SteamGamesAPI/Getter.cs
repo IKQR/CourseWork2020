@@ -25,5 +25,25 @@ namespace SteamGamesAPI
             var appList = JsonConvert.DeserializeObject<AppList>(jsonString);
             return appList.applist.apps.Take(200);
         }
+        public static List<SteamGame> Get(int skip,int take)
+        {
+            string jsonString = "";
+
+            using (Stream stream = GetResponse().GetResponseStream())
+                jsonString =
+                    new StreamReader(stream, System.Text.Encoding.UTF8).ReadToEnd();
+            var appList = JsonConvert.DeserializeObject<AppList>(jsonString);
+            return appList.applist.apps.Skip(skip).Take(take).ToList();
+        }
+        public static int GetCount()
+        {
+            string jsonString = "";
+
+            using (Stream stream = GetResponse().GetResponseStream())
+                jsonString =
+                    new StreamReader(stream, System.Text.Encoding.UTF8).ReadToEnd();
+            var appList = JsonConvert.DeserializeObject<AppList>(jsonString);
+            return appList.applist.apps.Length;
+        }
     }
 }
