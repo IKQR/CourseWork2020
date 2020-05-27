@@ -23,17 +23,24 @@
         @(new HtmlString(Model.Content))
     </div>
 
-    @using (Html.BeginForm("PostComments", "CommentAjax", new { PostId = Model.Id }, FormMethod.Post))
-    {
-        <div class="form-group">
-            <label asp-for="Comment">Comment</label>
-            <input asp-for="Comment" class="form-control">
-            <span asp-validation-for="Comment"></span>
-        </div>
-        <button type="submit" class="btn btn-success">Publish</button>
-    }
-    @foreach (var comment in Model.Comments)
-    {
-        <p>@comment.Content</p>
-    }
+    <div id="comments" class="mt-4 mb-4">
+        @using (Html.BeginForm("PostComments", "CommentAjax", new { PostId = Model.Id }, FormMethod.Post))
+        {
+            <div class="form-group">
+                <label asp-for="Comment">Comments</label>
+                <input asp-for="Comment" class="form-control">
+                <span asp-validation-for="Comment"></span>
+            </div>
+            <button type="submit" class="btn btn-success">Publish</button>
+        }
+        <ul class="list-group">
+            @foreach (var comment in Model.Comments)
+            {
+                <li class="list-group-item">
+                    <h5>@comment.AuthorName</h5>
+                    <p>@comment.Content</p>
+                </li>
+            }
+        </ul>
+    </div>
 </div>
