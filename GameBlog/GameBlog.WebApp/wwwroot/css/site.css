@@ -79,3 +79,10 @@ img {
     list-style: none;
     color: red;
 }
+
+span {
+    color: red;
+}
+li {
+    list-style: none
+}

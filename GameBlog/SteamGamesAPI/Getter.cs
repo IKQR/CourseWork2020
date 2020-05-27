@@ -23,7 +23,7 @@ namespace SteamGamesAPI
                 jsonString =
                     new StreamReader(stream, System.Text.Encoding.UTF8).ReadToEnd();
             var appList = JsonConvert.DeserializeObject<AppList>(jsonString);
-            return appList.applist.apps.Take(200);
+            return appList.applist.apps.Take(10000);
         }
         public static List<SteamGame> Get(int skip,int take)
         {

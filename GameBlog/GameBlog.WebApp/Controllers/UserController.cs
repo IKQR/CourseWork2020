@@ -55,7 +55,9 @@ namespace GameBlog.WebApp.Controllers
         [Route("changeName")]
         public async Task<IActionResult> Name()
         {
+            var user = await _userManager.GetUserAsync(User);
             NameChange model = new NameChange();
+            model.Name = user.UserName;
             return View(model);
         }
         [HttpPost]

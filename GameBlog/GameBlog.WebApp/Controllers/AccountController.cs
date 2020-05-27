@@ -3,6 +3,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AngleSharp.Dom;
+using GameBlog.CRUD.Abstracts;
 using GameBlog.DAL.Entities;
 using GameBlog.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -16,12 +17,15 @@ namespace GameBlog.WebApp.Controllers
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly RoleManager<Role> _roleManager;
+        private readonly UserRepository _userRepository;
 
         public AccountController(UserManager<User> userManager, 
             SignInManager<User> signInManager, 
-            RoleManager<Role> roleManager)
+            RoleManager<Role> roleManager,
+            GameBlogDbContext context)
         {
             _userManager = userManager;
+            _userRepository = new UserRepository(context);
             _signInManager = signInManager;
             _roleManager = roleManager;
         }
@@ -99,8 +103,14 @@ namespace GameBlog.WebApp.Controllers
             model.ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
+                User user = await _userRepository.GetByMail(model.Email.Trim());
+                if (user == null)
+                {
+                    ModelState.AddModelError("", "Wrong login or password");
+                    return View(model);
+                }
                 var result =
-                    await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+                    await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
                     // проверяем, принадлежит ли URL приложению
